@@ -8,5 +8,15 @@
         "versions": [
             "1.1.0"
         ]
+    },
+    "ICDC": {
+        "model-file": "icdc-model.yml",
+        "prop-file": "icdc-model-props.yml",
+        "readme-file": "Data_Model_Navigator_README.md",
+        "loading-file": "",
+        "current-version": "1.0.0",
+        "versions": [
+            "1.0.0"
+        ]
     }
 }
