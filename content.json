@@ -13,7 +13,7 @@
         "model-file": "icdc-model.yml",
         "prop-file": "icdc-model-props.yml",
         "readme-file": "Data_Model_Navigator_README.md",
-        "loading-file": "",
+        "loading-file": "ICDC_Data_Loading_Example_Files-TCL01.zip",
         "current-version": "1.0.0",
         "versions": [
             "1.0.0"
