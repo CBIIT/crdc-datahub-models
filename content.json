@@ -3,7 +3,7 @@
         "model-file": "cds-model.yml",
         "prop-file": "cds-model-props.yml",
         "readme-file": "README.md",
-        "loading-file": "cds-file-examples.zip",
+        "loading-file": "CDS_Data_Loading_Example.zip",
         "semantics": {
             "file-nodes": {
                 "file": {
