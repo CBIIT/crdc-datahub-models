@@ -38,7 +38,7 @@ Many nodes contain a single property visually identified as a Key Property by a 
 
 
 ### PDF Documentation
-Detailed documentation of the data model’s nodes and property requirements can be downloaded as PDF exports, either in the form of a comprehensive data dictionary inclusive of all nodes, invoked via the upper-level “Available Downloads” option, or from within the Table View, and invoked on a node-by-node basis. Used alongside the corresponding data loading templates described below, these node-specific PDF exports function as user guides for data preparation and submission. See the associated [Data Submission Guidelines](/#/submit)  
+Detailed documentation of the data model’s nodes and property requirements can be downloaded as PDF exports, either in the form of a comprehensive data dictionary inclusive of all nodes, invoked via the upper-level “Available Downloads” option, or from within the Table View, and invoked on a node-by-node basis. Used alongside the corresponding data loading templates described below, these node-specific PDF exports function as user guides for data preparation and submission. See the associated [Data Submission Guidelines](https://datacommons.cancer.gov)
 
 
 ### Data Loading Templates
