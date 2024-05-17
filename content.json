@@ -4,6 +4,7 @@
         "prop-file": "cds-model-props.yml",
         "readme-file": "README.md",
         "loading-file": "cds-file-examples.zip",
+        "list-delimiter": ",",
         "semantics": {
             "file-nodes": {
                 "file": {
@@ -26,6 +27,7 @@
         "prop-file": "icdc-model-props.yml",
         "readme-file": "Data_Model_Navigator_README.md",
         "loading-file": "ICDC_Data_Loading_Example_Files-TCL01.zip",
+        "list-delimiter": "*",
         "semantics": {
             "file-nodes": {
                 "file": {
