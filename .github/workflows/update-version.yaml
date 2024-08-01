@@ -1,39 +1,101 @@
-name: Commit and Push Changes
-
+name: Update Model test
 on:
   push:
     branches:
-      - action-test
-
+      - action-1234
 jobs:
-  commit-and-push:
+  update-model-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Check out the new-structure branch
         uses: actions/checkout@v3
+      - name: Check and create version folders
+        run: |
+          content=$(cat cache/content.json)
+          echo "$content" | jq -r 'to_entries[] | "\(.key) \(.value["current-version"]) \(.value["model-file"])"' | while read key current_version model_file; do
+
+            latest_version=$(ls -d cache/$key/*/ 2>/dev/null | sort -V | tail -n 1 | xargs -n 1 basename)
+
+            if [ -z "$latest_version" ]; then
+              echo "No version folders found for $key."
+            else
+              echo "Latest version for $key is $latest_version"
+
+              if [ -f "cache/$key/$latest_version/$model_file" ]; then          
+                model_version=$(grep -i '^Version:' "cache/$key/$latest_version/$model_file" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')
+                echo "Model file is cache/$key/$latest_version/$model_file"
+
+                if [ "$model_version" = "$current_version" ]; then
+                  echo "Model file version matches the current version ($current_version) for $key."
+                else         
+                  echo "Model file version ($model_version) does NOT match the current version ($current_version) for $key."
+
+                  # Create a new directory if it doesn't exist
+                  if [ ! -d "cache/$key/$current_version" ]; then
+                    echo "Version $current_version does NOT exist in cache/$key/. Creating directory..."
+                    mkdir -p "cache/$key/$current_version"
+                    echo "Directory cache/$key/$current_version created."
+
+                    # Copy all existing contents into the new folder   
+                    cp -r "cache/$key/$latest_version/"* "cache/$key/$current_version/"
+                    echo "Copied contents from cache/$key/$latest_version to cache/$key/$current_version."
+          
+          
+                    # Update content.json: push latest version into array and update current version
+                    updated_content=$(echo "$content" | jq --arg key "$key" --arg current_version "$current_version" --arg latest_version "$latest_version" '
+                      .[$key]["versions"] |= . + [$latest_version] |
+                      .[$key]["current-version"] = $latest_version
+                    ')
+          
+                    echo "$updated_content" > cache/content.json
+                    echo "Updated content.json with current version $current_version pushed to versions and latest version $latest_version set as current for $key."
+          
+                    # Verify the update by reading the updated JSON
+                    echo "Verifying the updated content for $key:"
+                    echo "$updated_content" | jq -r --arg key "$key" '
+                    "\($key): Current Version - \(.[$key]["current-version"]), Versions - \(.[$key]["versions"] | join(", "))"
+                    '
+                  fi
+                fi
+              else
+                echo "Model file $model_file not found in cache/$key/$latest_version."
+              fi
+            fi
+
+          done
+
+      - name: Switch to the desired branch
+        run: |
+          git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
 
       - name: Configure Git
         run: |
-          git config --global user.name "knockknock"
+          git config --global user.name "test"
           git config --global user.email "iheaven0129@gmail.com"
 
       - name: Make changes
         run: |
-          # Make some changes here, e.g., editing a file
+          # Make some changes, e.g., editing a file
           echo "Some new content" >> example-file.txt
 
       - name: Stage changes
         run: git add .
 
+      - name: Stash unstaged changes
+        run: git stash
+
+      - name: Pull latest changes before push
+        run: git pull origin ${{ github.ref_name }} --rebase
+
+      - name: Apply stashed changes
+        run: git stash pop
+
       - name: Commit changes
-        run: git commit -m "Automated commit from GitHub Action"
+        run: git commit -am "Automated commit from GitHub Action after rebase"
 
       - name: Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin action-test
-
-
-
-
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin ${{ github.ref_name }}
