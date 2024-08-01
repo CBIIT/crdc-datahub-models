@@ -1,0 +1,39 @@
+name: Commit and Push Changes
+
+on:
+  push:
+    branches:
+      - action-test
+
+jobs:
+  commit-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "knockknock"
+          git config --global user.email "iheaven0129@gmail.com"
+
+      - name: Make changes
+        run: |
+          # Make some changes here, e.g., editing a file
+          echo "Some new content" >> example-file.txt
+
+      - name: Stage changes
+        run: git add .
+
+      - name: Commit changes
+        run: git commit -m "Automated commit from GitHub Action"
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git push origin action-test
+
+
+
+
