@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - RDCDH-1335
+      - CRDCDH-1335
   pull_request:
     branches:
-      - RDCDH-1335
+      - CRDCDH-1335
 
 jobs:
   update-model-version:
