@@ -49,3 +49,39 @@ jobs:
               echo "Model file $model_file_path not found. or model file is not properly defined"
             fi
           done
+
+      - name: Switch to the desired branch
+        run: |
+          git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
+
+      - name: Configure Git
+        run: |
+#          TODO setup the user email
+#          git config --global user.name "Young Yoo"
+#          git config --global user.email "young.yoo@nih.gov"
+
+      - name: Stage content.json explicitly
+        run: |
+          git add cache/content.json
+
+      - name: Check for changes in content.json before committing
+        run: |
+          if git diff --cached --quiet; then
+            echo "No changes to commit for content.json."
+            echo "skip_commit=true" >> $GITHUB_ENV
+          else
+            echo "skip_commit=false" >> $GITHUB_ENV
+          fi
+
+      - name: Commit changes
+        if: env.skip_commit == 'false'
+        run: |
+          git commit -m "Updated the latest model version in the content.json"
+
+      - name: Push changes
+        if: env.skip_commit == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin ${{ github.ref_name }}
