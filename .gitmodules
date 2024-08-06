@@ -1,0 +1,9 @@
+[submodule "icdc-model"]
+	path = icdc-model
+	url = https://github.com/CBIIT/icdc-model-tool.git
+[submodule "cds-model"]
+	path = cds-model
+	url = https://github.com/CBIIT/cds-model.git
+[submodule "ctdc-model"]
+	path = ctdc-model
+	url = https://github.com/CBIIT/ctdc-model.git
