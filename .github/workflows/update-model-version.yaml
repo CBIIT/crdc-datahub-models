@@ -2,8 +2,7 @@ name: Update Data Model Version
 on:
   push:
     branches:
-      - dev
-      - dev2
+      - CRDCH-1335
 
 jobs:
   update-data-model-version:
