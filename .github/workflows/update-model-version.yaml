@@ -53,15 +53,14 @@ jobs:
       - name: Ensure branch is created and checked out
         run: |
           git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
-#          git branch --set-upstream-to=origin/${{ github.ref_name }}
       - name: Configure Git
         run: |
-          git config --global user.name "Young Yoo"
-          git config --global user.email "iheaven0129@gmail.com"
+          git config --global user.name "test"
+          git config --global user.email "test@nih.gov"
 
       - name: Stage content.json explicitly
         run: |
-          git add cache/content.json
+          git add cache/
 
       - name: Check for changes in content.json before committing
         run: |
