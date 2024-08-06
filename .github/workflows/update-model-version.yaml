@@ -50,15 +50,16 @@ jobs:
             fi
           done
 
-      - name: Switch to the desired branch
+      - name: Ensure branch is created and checked out
         run: |
           git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
+          git branch --set-upstream-to=origin/${{ github.ref_name }}
 
       - name: Configure Git
         run: |
 #          TODO setup the user email
-#          git config --global user.name "Young Yoo"
-#          git config --global user.email "young.yoo@nih.gov"
+          git config --global user.name "Young Yoo"
+          git config --global user.email "iheaven0129@gmail.com"
 
       - name: Stage content.json explicitly
         run: |
