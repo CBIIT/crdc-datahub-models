@@ -2,7 +2,8 @@ name: Update Data Model Version
 on:
   push:
     branches:
-      - CRDCH-1335
+      - dev
+      - dev2
 
 jobs:
   update-data-model-version:
@@ -52,10 +53,9 @@ jobs:
       - name: Ensure branch is created and checked out
         run: |
           git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
-          git branch --set-upstream-to=origin/${{ github.ref_name }}
+#          git branch --set-upstream-to=origin/${{ github.ref_name }}
       - name: Configure Git
         run: |
-          # TODO setup the user email
           git config --global user.name "Young Yoo"
           git config --global user.email "iheaven0129@gmail.com"
 
