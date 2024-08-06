@@ -1,68 +1,69 @@
 {
-    "CDS": {
-        "model-file": "cds-model.yml",
-        "prop-file": "cds-model-props.yml",
-        "readme-file": "README.md",
-        "loading-file": "cds-file-examples.zip",
-        "semantics": {
-            "file-nodes": {
-                "file": {
-                    "id-field": "file_id",
-                    "name-field": "file_name",
-                    "size-field": "file_size",
-                    "md5-field": "md5sum"
-                }
-            }
-        },
-        "current-version": "4.0.0",
-        "versions": [
-            "4.0.0",
-            "3.1.2",
-            "2.1.0",
-            "1.3.0",
-            "1.1.0"
-        ]
+  "CDS": {
+    "model-file": "cds-model.yml",
+    "prop-file": "cds-model-props.yml",
+    "readme-file": "README.md",
+    "loading-file": "cds-file-examples.zip",
+    "semantics": {
+      "file-nodes": {
+        "file": {
+          "id-field": "file_id",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
     },
-    "ICDC": {
-        "model-file": "icdc-model.yml",
-        "prop-file": "icdc-model-props.yml",
-        "readme-file": "Data_Model_Navigator_README.md",
-        "loading-file": "ICDC_Data_Loading_Example_Files-TCL01.zip",
-        "list-delimiter": "*",
-        "omit-DCF-prefix": true,
-        "semantics": {
-            "file-nodes": {
-                "file": {
-                    "id-field": "uuid",
-                    "name-field": "file_name",
-                    "size-field": "file_size",
-                    "md5-field": "md5sum"
-                }
-            }
-        },
-        "current-version": "1.0.0",
-        "versions": [
-            "1.0.0"
-        ]
+    "current-version": "4.0.2",
+    "versions": [
+      "4.0.0",
+      "3.1.2",
+      "2.1.0",
+      "1.3.0",
+      "1.1.0",
+      "4.0.2"
+    ]
+  },
+  "ICDC": {
+    "model-file": "icdc-model.yml",
+    "prop-file": "icdc-model-props.yml",
+    "readme-file": "Data_Model_Navigator_README.md",
+    "loading-file": "ICDC_Data_Loading_Example_Files-TCL01.zip",
+    "list-delimiter": "*",
+    "omit-DCF-prefix": true,
+    "semantics": {
+      "file-nodes": {
+        "file": {
+          "id-field": "uuid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
     },
-    "CTDC": {
-        "model-file": "ctdc_model_file.yaml",
-        "prop-file": "ctdc_model_properties_file.yaml",
-        "readme-file": "README.md",
-        "loading-file": "",
-        "semantics": {
-            "file-nodes": {
-                "data_file": {
-                    "id-field": "data_file_uuid",
-                    "name-field": "data_file_name",
-                    "size-field": "data_file_size",
-                    "md5-field": "data_file_checksum_value"
-                }
-            }
-        },
-        "current-version": "1.0.0",
-        "versions": [
-            "1.0.0"
-        ]
-    }
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "CTDC": {
+    "model-file": "ctdc_model_file.yaml",
+    "prop-file": "ctdc_model_properties_file.yaml",
+    "readme-file": "README.md",
+    "loading-file": "",
+    "semantics": {
+      "file-nodes": {
+        "data_file": {
+          "id-field": "data_file_uuid",
+          "name-field": "data_file_name",
+          "size-field": "data_file_size",
+          "md5-field": "data_file_checksum_value"
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
+  }
 }
