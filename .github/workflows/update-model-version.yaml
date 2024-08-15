@@ -9,8 +9,16 @@ jobs:
   update-data-model-version:
     runs-on: ubuntu-latest
     steps:
+      - name: Printing the branch currently working on
+        run: echo "BRANCH_NAME=${{ github.ref_name }}"
       - name: Check out the branch
         uses: actions/checkout@v3
+        with:
+          submodules: true  # This ensures submodules are also checked out
+      - name: Update submodule to the latest commit on master
+        run: |
+          git submodule init
+          git submodule update --remote --merge
       - name: Check and create version folders
         run: |
           content=$(cat cache/content.json)
@@ -57,10 +65,6 @@ jobs:
         run: |
           git config --global user.name "test"
           git config --global user.email "test@nih.gov"
-
-      - name: Stage content.json explicitly
-        run: |
-          git add cache/
 
       - name: Check for changes in content.json before committing
         run: |
