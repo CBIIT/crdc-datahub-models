@@ -57,7 +57,8 @@ jobs:
                   .[$key]["versions"] |= . + [$model_v] |
                   .[$key]["current-version"] = $model_v
                 ')
-                echo "$updated_content" > cache/content.json
+                updated_content_test=$(echo "$updated_content" | sed 's/^/  /g')
+                echo "$updated_content_test" > cache/content.json
               fi
             else
               echo "Model file $model_file_path not found. or model file is not properly defined"
