@@ -54,7 +54,7 @@ jobs:
           
                 # Update content.json and handle version mismatch
                 updated_content=$(echo "$content" | jq --arg key "$key" --arg model_v "$latest_version" '
-                  .[$key]["versions"] |= . + [$model_v] |
+                  .[$key]["versions"] |= (if index($model_v) == null then [$model_v] + . else . end) |
                   .[$key]["current-version"] = $model_v
                 ')
                 echo "$updated_content" > cache/content.json
