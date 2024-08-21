@@ -90,7 +90,7 @@ jobs:
       - name: Commit changes
         if: env.skip_commit == 'false'
         run: |
-          git commit -m "Updated the latest model version in the content.json" --allow-unrelated-histories
+          git commit -m "Updated the latest model version in the content.json"
 
       - name: Push changes
         if: env.skip_commit == 'false'
