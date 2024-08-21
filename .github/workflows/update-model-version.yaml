@@ -45,7 +45,9 @@ jobs:
                   mkdir -p "$new_cache_directory"
                   echo "Directory $new_cache_directory created."
           
-                  # Copy all existing contents into the new folder   
+                  # Copy all files from the previous version into the new folder
+                  cp -r "$cache/$key/$current_version/"* "$new_cache_directory/"
+                  # Copy(overwrite) all existing contents into the new folder   
                   cp -r "$model_path/"* "$new_cache_directory/"
                   echo "Copied contents from $model_path to cache/$key/$new_cache_directory."
                 else
@@ -88,7 +90,7 @@ jobs:
       - name: Commit changes
         if: env.skip_commit == 'false'
         run: |
-          git commit -m "Updated the latest model version in the content.json"
+          git commit -m "Updated the latest model version in the content.json" --allow-unrelated-histories
 
       - name: Push changes
         if: env.skip_commit == 'false'
