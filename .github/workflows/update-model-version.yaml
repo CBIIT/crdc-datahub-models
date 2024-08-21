@@ -46,7 +46,10 @@ jobs:
                   echo "Directory $new_cache_directory created."
           
                   # Copy all files from the previous version into the new folder
-                  cp -r "cache/$key/$current_version/"* "$new_cache_directory/"
+                  prev_version_dir="cache/$key/$current_version/"
+                  if [ -d "$prev_version_dir" ]; then
+                    cp -r "$prev_version_dir/." "$new_cache_directory/"
+                  fi
                   # Copy(overwrite) all existing contents into the new folder   
                   cp -r "$model_path/"* "$new_cache_directory/"
                   echo "Copied contents from $model_path to cache/$key/$new_cache_directory."
