@@ -1,0 +1,104 @@
+name: Update Data Model Version
+on:
+  schedule:
+    - cron: "29 * * * *"   # every hour on 29th minute, randomly chose
+#    - cron: "29 4 * * *"   # every day at 04:29 UTC, randomly chose
+
+#  push:
+#    branches:
+#      - dev
+#      - dev2
+
+jobs:
+  update-data-model-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing the branch currently working on
+        run: echo "BRANCH_NAME=${{ github.ref_name }}"
+      - name: Check out the branch
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # This ensures submodules are also checked out
+      - name: Update submodule to the latest commit on master
+        run: |
+          git submodule update --init
+          git submodule update --remote
+      - name: Check and create version folders
+        run: |
+          content=$(cat cache/content.json)
+          echo "$content" | jq -r 'to_entries[] | "\(.key) \(.value["current-version"]) \(.value["model-file"])"' | while read key current_version model_file; do
+            # uses a prefix path ex) cds(lowercase) + -model, icdc(lowercase) + -model
+            model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
+            model_path="$model_prefix/model-desc"
+            model_file_path="$model_path/$model_file"
+          
+            if [ -f "$model_file_path" ] && grep -q '^Version:' "$model_file_path"; then
+              latest_version=$(grep -i '^Version:' "$model_file_path" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')                      
+              if [ "$latest_version" != "$current_version" ]; then
+                echo "New version is detected"
+
+                # Create a new directory if it doesn't exist
+                new_cache_directory="cache/$key/$latest_version"
+                echo "new_cache_directory: $new_cache_directory"
+                if [ ! -d "$new_cache_directory" ]; then
+                  echo "Version $latest_version does NOT exist in cache/$key/. Creating directory..."
+                  mkdir -p "$new_cache_directory"
+                  echo "Directory $new_cache_directory created."
+          
+                  # Copy all files from the previous version into the new folder
+                  prev_version_dir="cache/$key/$current_version/"
+                  if [ -d "$prev_version_dir" ]; then
+                    cp -r "$prev_version_dir/." "$new_cache_directory/"
+                  fi
+                  # Copy(overwrite) all existing contents into the new folder   
+                  cp -r "$model_path/"* "$new_cache_directory/"
+                  echo "Copied contents from $model_path to cache/$key/$new_cache_directory."
+                else
+                  echo "Directory $new_cache_directory already exists."
+                fi
+          
+                # Update content.json and handle version mismatch
+                updated_content=$(echo "$content" | jq --arg key "$key" --arg model_v "$latest_version" '
+                  .[$key]["versions"] |= (if index($model_v) == null then [$model_v] + . else . end) |
+                  .[$key]["current-version"] = $model_v
+                ')
+                echo "$updated_content" > cache/content.json
+              fi
+            else
+              echo "Model file $model_file_path not found or model file is not properly defined"
+            fi
+          done
+
+      - name: Ensure branch is created and checked out
+        run: |
+          git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "test@nih.gov"
+
+      - name: Stage all files includes submodules
+        run: |
+          git add --all
+
+      - name: Check for changes in content.json before committing
+        run: |
+          if git diff --cached --quiet; then
+            echo "No changes to commit for content.json."
+            echo "skip_commit=true" >> $GITHUB_ENV
+          else
+            echo "skip_commit=false" >> $GITHUB_ENV
+          fi
+
+      - name: Commit changes
+        if: env.skip_commit == 'false'
+        run: |
+          git commit -m "Updated the latest model version in the content.json"
+
+      - name: Push changes
+        if: env.skip_commit == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin ${{ github.ref_name }}
