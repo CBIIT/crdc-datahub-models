@@ -22,7 +22,7 @@ jobs:
       - name: Update submodule to the latest commit on master
         run: |
           git submodule update --init
-          git submodule update --remote --merge
+          git submodule update --remote
       - name: Check and create version folders
         run: |
           content=$(cat cache/content.json)
