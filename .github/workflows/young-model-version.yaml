@@ -1,9 +1,9 @@
-name: Update Data Model Version
+name: Young Data Model Version
 on:
   schedule:
     - cron: "29 * * * *"   # every hour on 29th minute, randomly chose
 #    - cron: "29 4 * * *"   # every day at 04:29 UTC, randomly chose
-
+  workflow_dispatch:
 #  push:
 #    branches:
 #      - dev
