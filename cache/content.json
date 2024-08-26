@@ -5,6 +5,13 @@
         "readme-file": "README.md",
         "loading-file": "cds-file-examples.zip",
         "semantics": {
+            "main-nodes": {
+                "program": "Program",
+                "study": "Study",
+                "participant": "Participant",
+                "sample": "Sample",
+                "file": "File"
+            },
             "file-nodes": {
                 "file": {
                     "id-field": "file_id",
@@ -32,6 +39,14 @@
         "list-delimiter": "*",
         "omit-DCF-prefix": true,
         "semantics": {
+            "main-nodes": {
+                "program": "Program",
+                "study": "Study",
+                "case": "Participant",
+                "sample": "Sample",
+                "file": "File",
+                "principal_investigator": "Principal Investigator"
+            },
             "file-nodes": {
                 "file": {
                     "id-field": "uuid",
@@ -52,6 +67,14 @@
         "readme-file": "README.md",
         "loading-file": "CTDC_Example_Files.zip",
         "semantics": {
+            "main-nodes": {
+                "program": "Program",
+                "study": "Study",
+                "subject": "Participant",
+                "specimen": "Sample",
+                "data_file": "File",
+                "principal_investigator": "Principal Investigator"
+            },
             "file-nodes": {
                 "data_file": {
                     "id-field": "data_file_uuid",
