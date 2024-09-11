@@ -483,8 +483,10 @@ PropDefinitions:
     Src: CMB
     Enum: # Currently reflective only of the values used by the CMB
       - American Indian or Alaska Native
+      - Asian
       - Black or African American
       - Native Hawaiian or other Pacific Islander
+      - White
       - Not Reported
       - Unknown
     Req: 'Yes'
@@ -544,7 +546,7 @@ PropDefinitions:
       #- Refused to Answer # = Response Declined per CMB?
       - Response Declined # per CMB data values
       - Unknown # per CMB data values
-    Req: 'Yes'
+    Req: Preferred
   height:
     Desc: <The number that describes the vertical distance of an individual.> The
       height of the subject as of enrollment, measured in cm. <br>CDE ID = 2179643
@@ -599,7 +601,7 @@ PropDefinitions:
         Version: '1'
     Src: CMB
     Type: string
-    Req: 'Yes'
+    Req: Preferred
   income:
     Desc: <The amount of earnings made by a family in a year.> <br>CDE ID = 14834966
     Term:
@@ -661,7 +663,7 @@ PropDefinitions:
     Type: string # supposedly enumerated but no permissible values specified
     Req: 'Yes'
   # exposure
-  exposure_id:
+  exposure_record_id:
     Desc: <A unique sequence of characters used to identify a linkage between related
       records.> A unique identifier of each exposure record, used to identify the
       correct exposure records during data updates. The value of this property will
@@ -697,7 +699,7 @@ PropDefinitions:
       - Smokeless Tobacco Exposure
       - Tobacco Related Exposure
       - Wood Dust Exposure
-    Req: 'Yes'
+    Req: Preferred
   carcinogen_exposure:
     Desc: <An indication of whether the participant was exposed to environmental/workplace
       carcinogens (for example arsenic, asbestos, diesel exhaust, chromium, silica).>
@@ -809,6 +811,7 @@ PropDefinitions:
       - "10028566" # Plasma Cell Myeloma
       - "10036910" # Prostate Carcinoma
       - "10041071" # Small Cell Lung Carcinoma
+      - "10017760" # Gastric Cancer NOS
     Req: 'Yes'
   snomed_disease_term:
     Desc: Description pending #<br>NOT CURRENTLY ASSIGNED ANY CDE
@@ -878,6 +881,7 @@ PropDefinitions:
       - "372244006" #Melanoma
       - "72495009" #Mucinous Adenocarcinoma
       - "55921005a" #Multiple myeloma
+      - "55921005" #Multiple myeloma
       - "188717001" #Multiple myeloma and immunoproliferative disease
       - "253000007" #Neuroendocrine Carcinoma
       - "2142002" #Nodular Melanoma
@@ -973,7 +977,7 @@ PropDefinitions:
       - Stage IVA
       - Stage IVB
       - Stage IVC
-    Req: 'Yes'
+    Req: Preferred
   tumor_grade:
     Desc: <A text term to express the degree of abnormality of cancer cells as a measure
       of differentiation and aggressiveness.> <br>CDE ID = 11325685
@@ -1001,7 +1005,7 @@ PropDefinitions:
       - Moderately Differentiated # Value exactly as used by the CMB
       - Poorly Differentiated # Value exactly as used by the CMB
       - Undifferentiated grade # Value exactly as used by the CMB
-    Req: 'Yes'
+    Req: Preferred
   # date_of_diagnosis:
   #   Desc: <The date of the procedure or evaluation used to determine the diagnosis.> <br>CDE ID = 2178801 (added 05-28-24)
   #   Term:
@@ -1265,7 +1269,7 @@ PropDefinitions:
       - Too Early
       - Not Evaluable
       - Unknown
-    Req: 'Yes'
+    Req: Preferred
   # surgery
   surgical_procedure_record_id:
     Desc: <A unique sequence of characters used to identify a linkage between related
@@ -1299,7 +1303,7 @@ PropDefinitions:
         Code: 'code/ID' #NOT CURRENTLY ASSIGNED ANY CDE
         Value: Data Element Name
     Src: CMB
-    Type: date
+    Type: integer
     Req: 'Yes'
   surgical_procedure_anatomical_location:
     Desc: <The Uberon identifier for the location within the body where a procedure
@@ -1446,7 +1450,7 @@ PropDefinitions:
         Version: '1'
     Src: CMB
     Type: integer
-    Req: 'Yes'
+    Req: Preferred
   radiotherapy_end_date:
     Desc: <The number of days from the date of enrollment to the date of treatment
       end.> The date upon which administration of the radiotherapy in question ended,
@@ -1480,7 +1484,7 @@ PropDefinitions:
       - Too Early
       - Not Evaluable
       - Unknown
-    Req: 'Yes'
+    Req: Preferred
   # subject_status
   subject_status_record_id:
     Desc: <A unique sequence of characters used to identify a linkage between related
@@ -1507,9 +1511,9 @@ PropDefinitions:
         Version: '1'
     Src: DSS # previously CMB
     Enum:
-      # - ALIVE
-      # - DEAD
-      # - UNKNOWN
+      - ALIVE # Value exactly as used by the CMB
+      - DEAD # Value exactly as used by the CMB
+      - UNKNOWN # Value exactly as used by the CMB
       - Alive with Disease # Value exactly as used by the CMB
       - Alive with No Evidence of Disease # Value exactly as used by the CMB
       - Alive, Disease Status Unknown # Value exactly as used by the CMB
@@ -1594,22 +1598,22 @@ PropDefinitions:
       - WITHDRAWAL OF CONSENT
     Req: 'No'
   # specimen 
-  specimen_record_id: # this will be the exact same value that the CMB uses for biospecimen_id
-    Desc: <A sequence of characters used to identify the kind of material that forms
-      the sample.> <br>CDE ID =  14986441 <br>This property is used as the key via
-      which child records, e.g. data files generated via Oncomine panel analyses,
-      can be associated with the appropriate specimen during data loading, and to
-      identify the correct records during data updates.                                                                                                                                                                                                                                                                                                                     #CMB's "Biospecimen ID"
-    Term:
-      - Origin: caDSR - CTDC
-        Code: '14986441' #(updated 07-23-24) prior CDE ID = 6921892 (added 06-03-24)
-        Value: Specimen Material Identifier #Biospecimen Source Laboratory Identifier <A unique sequence of alphanumeric characters used to identify the specimen at it's point of origin.>
-        Version: '1'
-    Src: CMB
-    Type: string
-    Req: 'Yes'
-    Key: true
-  parent_specimen_id: # this will be the exact same value that the CMB uses for parent_biospecimen_id
+  # specimen_id: # this will be the exact same value that the CMB uses for biospecimen_id
+  #   Desc: <A sequence of characters used to identify the kind of material that forms
+  #     the sample.> <br>CDE ID =  14986441 <br>This property is used as the key via
+  #     which child records, e.g. data files generated via Oncomine panel analyses,
+  #     can be associated with the appropriate specimen during data loading, and to
+  #     identify the correct records during data updates.                                                                                                                                                                                                                                                                                                                     #CMB's "Biospecimen ID"
+  #   Term:
+  #     - Origin: caDSR - CTDC
+  #       Code: '14986441' #(updated 07-23-24) prior CDE ID = 6921892 (added 06-03-24)
+  #       Value: Specimen Material Identifier #Biospecimen Source Laboratory Identifier <A unique sequence of alphanumeric characters used to identify the specimen at it's point of origin.>
+  #       Version: '1'
+    # Src: CMB
+    # Type: string
+    # Req: 'Yes'
+    # Key: true
+  specimen_record_id: # this will be the exact same value that the CMB uses for parent_biospecimen_id
     Desc: <A sequence of characters used to identify the kind of material that forms
       the parent sample.> <br>CDE ID =  14986442                                                                                #CMB's "Parent Biospecimen ID"
     Term:
@@ -1620,8 +1624,8 @@ PropDefinitions:
     Src: CMB
     Type: string
     Req: 'Yes'
-    Key: false
-  parent_specimen_type: # this refers to the nature of the specimen originally isolated from the participant, and from which various aliquots and/or derivative biospecimens were subseuqently isolated
+    Key: true
+  specimen_type: # this refers to the nature of the specimen originally isolated from the participant, and from which various aliquots and/or derivative biospecimens were subseuqently isolated
     Desc: <The kind of material that forms the parent sample as captured in the Ontology
       for Biobanking (OBIB).> <br>CDE ID = 14986443
     Term:
@@ -1637,39 +1641,43 @@ PropDefinitions:
       - FFPE Block
       - Formalin Bone Marrow Biopsy
       - Formalin Fixed Tissue
+      - FORMALIN FIXED TISSUE
       - Snap Frozen Tissue
       - Stained Bone Marrow Aspirate Slide
       - Streck Blood
+      - Streck Blood to VARI
       - Unstained Bone Marrow Aspirate Slide
       - Unstained Slide
+      - Fresh Tissue in Media to PDMR
+      - Streck Blood to PDMR
     Req: 'Yes'
-  specimen_type: # this refers to the nature of the sub-specimen that was actually subject to downstream analysis
-    Desc: <The kind of material that forms the sample as captured in the Ontology
-      for Biobanking (OBIB).> <br>CDE ID = 11253427
-    Term:
-      - Origin: caDSR - CRDC
-        Code: '11253427' #(added 06-03-24) (correct as of 07-23-24)
-        Value: Specimen Material OBIB Source
-        Version: '1'
-    Src: CMB
-    Enum: #Acceptable values taken straight from the CMB Catalog Site
-      - BMMC
-      - Blood Pellet
-      - Cells
-      - Curl
-      - DNA
-      - FFPE Block
-      - Glass H&E Slide
-      - Glass Slide Smear
-      - Glass Unstained Slide
-      - PBMC
-      - Plasma
-      - Plasma-cf
-      - RNA
-      - Snap Frozen Unfixed Tissue
-      - Tissue Curl
-      - cDNA
-    Req: 'Yes'
+  # specimen_type: # this refers to the nature of the sub-specimen that was actually subject to downstream analysis
+  #   Desc: <The kind of material that forms the sample as captured in the Ontology
+  #     for Biobanking (OBIB).> <br>CDE ID = 11253427
+  #   Term:
+  #     - Origin: caDSR - CRDC
+  #       Code: '11253427' #(added 06-03-24) (correct as of 07-23-24)
+  #       Value: Specimen Material OBIB Source
+  #       Version: '1'
+  #   Src: CMB
+  #   Enum: #Acceptable values taken straight from the CMB Catalog Site
+  #     - BMMC
+  #     - Blood Pellet
+  #     - Cells
+  #     - Curl
+  #     - DNA
+  #     - FFPE Block
+  #     - Glass H&E Slide
+  #     - Glass Slide Smear
+  #     - Glass Unstained Slide
+  #     - PBMC
+  #     - Plasma
+  #     - Plasma-cf
+  #     - RNA
+  #     - Snap Frozen Unfixed Tissue
+  #     - Tissue Curl
+  #     - cDNA
+  #   Req: 'Yes'
   # obi_specimen_type:
   #   Desc: This doesn't match the caDSR record of "Specimen Material OBIB Source" for CDE ID = 11253427 <br>The kind of material that forms the sample as captured in the Ontology for Biobanking (OBIB), a specimen subset of the Ontology for Biomedical Investigations (OBI).
   #   Term:
@@ -1690,17 +1698,24 @@ PropDefinitions:
     Src: CMB DD
     Enum:
       - BLOOD
+      - Blood
       - BONE MARROW
+      - Bone Marrow
       - BUCCAL CELL SAMPLE
       - CEREBROSPINAL FLUID
       - FORMALIN FIXED PARAFFIN EMBEDDED TISSUE
+      - Formalin Fixed Paraffin Embedded Tissue
       - FORMALIN FIXED TISSUE
+      - Formalin Fixed Tissue
       - FRESH TISSUE
+      - Fresh Tissue
       - FROZEN TISSUE
+      - Frozen Tissue
       - OTHER BODILY FLUIDs
       - SALIVA
       - STOOL
       - URINE
+      
     Req: 'Yes'
   anatomical_collection_site:
     Desc: <The location within the body from which a specimen was originally obtained
@@ -1741,7 +1756,8 @@ PropDefinitions:
       - Metastatic
       - Normal
       - Primary
-    Req: 'Yes'
+      - Adjacent Non-Tumor
+    Req: Preferred
   # icd_o_3_tissue_morphology:
   #   Desc: The coded result of analyzing the microscopic anatomy of normal and abnormal cells and tissues of the specimen by examining a thin slice (section) under a light (optical) or electron microscope. The code represents the histology of the disease using the third edition of the International Classification of Diseases for Oncology. <br>Acceptable values currently specified, none of which are sourced from actual data, are to be used only for generation of mock data. <br>CDE ID = 11326261
   #   Term:
@@ -1767,6 +1783,11 @@ PropDefinitions:
       - BASELINE
       - ON TREATMENT
       - PROGRESSION
+      - Baseline (Fresh)
+      - On Treatment (Fresh)
+      - Archival
+      - Progression (Fresh)
+      - Post-Treatment (No progression)
     Req: 'Yes'
   collection_date:
     Desc: <WORK NEEDED HERE> From the CMB perspective, this may be equivalent to "days_from_diagnosis_to_specimen_collection"
@@ -1782,7 +1803,7 @@ PropDefinitions:
       units:
         - days
       value_type: number
-    Req: 'Yes'
+    Req: Preferred
   # days_from_diagnosis_to_specimen_collection:
   #   Desc: The number of days from the date a sample was collected to the date of the initial pathologic diagnosis. <br>CDE ID = 11253404 ALL OF THIS IS INCORRECT BECAUSE THE INCORRECT CDE WAS REFERENCED; PER THE CORRECT CDE ID OF 11248865 THE PROPERTY DESCRIPTION SHOULD BE The number of days from the date the diagnosis was made to the date a sample was collected.
   #   Term:
