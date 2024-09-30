@@ -1,0 +1,92 @@
+{
+  "CDS": {
+    "model-file": "cds-model.yml",
+    "prop-file": "cds-model-props.yml",
+    "readme-file": "README.md",
+    "loading-file": "cds-file-examples.zip",
+    "semantics": {
+      "main-nodes": {
+        "program": "Program",
+        "study": "Study",
+        "participant": "Participant",
+        "sample": "Sample",
+        "file": "File"
+      },
+      "file-nodes": {
+        "file": {
+          "id-field": "file_id",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
+    },
+    "current-version": "4.0.1",
+    "versions": [
+      "4.0.1",
+      "4.0.0",
+      "3.1.2",
+      "2.1.0",
+      "1.3.0",
+      "1.1.0"
+    ]
+  },
+  "ICDC": {
+    "model-file": "icdc-model.yml",
+    "prop-file": "icdc-model-props.yml",
+    "readme-file": "Data_Model_Navigator_README.md",
+    "loading-file": "ICDC_Example_Files.zip",
+    "list-delimiter": "*",
+    "omit-DCF-prefix": true,
+    "semantics": {
+      "main-nodes": {
+        "program": "Program",
+        "study": "Study",
+        "case": "Participant",
+        "sample": "Sample",
+        "file": "File",
+        "principal_investigator": "Principal Investigator"
+      },
+      "file-nodes": {
+        "file": {
+          "id-field": "uuid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "CTDC": {
+    "model-file": "ctdc_model_file.yaml",
+    "prop-file": "ctdc_model_properties_file.yaml",
+    "readme-file": "README.md",
+    "loading-file": "CTDC_Example_Files.zip",
+    "semantics": {
+      "main-nodes": {
+        "program": "Program",
+        "study": "Study",
+        "subject": "Participant",
+        "specimen": "Sample",
+        "data_file": "File",
+        "principal_investigator": "Principal Investigator"
+      },
+      "file-nodes": {
+        "data_file": {
+          "id-field": "data_file_uuid",
+          "name-field": "data_file_name",
+          "size-field": "data_file_size",
+          "md5-field": "data_file_checksum_value"
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
+  }
+}
