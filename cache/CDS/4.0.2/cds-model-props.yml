@@ -10859,8 +10859,14 @@ PropDefinitions:
     Type: string
     Req: 'Yes'
     Enum:
-    - Testonechanged
-    - Testtwochanged
+    - Adult - legal age
+    - Pediatric
+    Term:
+    - Origin: caDSR
+      Original Source: DSS
+      Code: '11444542'
+      Value: Program Name Text
+      Version: '1.00'
   program_short_description:
     Desc: An abbreviated, single sentence description of the program.
     Src: Internally-curated
