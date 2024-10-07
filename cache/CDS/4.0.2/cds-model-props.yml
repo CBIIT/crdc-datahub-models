@@ -10858,6 +10858,9 @@ PropDefinitions:
     Src: Internally-curated
     Type: string
     Req: 'Yes'
+    Enum:
+    - Test one
+    - Test two
     Term:
     - Origin: caDSR
       Original Source: DSS
