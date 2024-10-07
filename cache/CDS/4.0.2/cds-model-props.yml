@@ -10859,8 +10859,8 @@ PropDefinitions:
     Type: string
     Req: 'Yes'
     Enum:
-    - Test one
-    - Test two
+    - Test one changed
+    - Test two changed
   program_short_description:
     Desc: An abbreviated, single sentence description of the program.
     Src: Internally-curated
