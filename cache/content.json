@@ -160,14 +160,13 @@
     "loading-file": "",
     "semantics": {
       "main-nodes": {
-        "program": "Program",
         "study": "Study",
-        "subject": "Participant",
-        "specimen": "Sample",
-        "data_file": "File"
+        "participant": "Participant",
+        "sample": "Sample",
+        "file": "File"
       },
       "file-nodes": {
-        "data_file": {
+        "file": {
           "id-field": "file_id",
           "name-field": "",
           "size-field": "file_size",
