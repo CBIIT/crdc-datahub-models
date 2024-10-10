@@ -154,8 +154,8 @@
     ]
   },
   "Test MDF": {
-    "model-file": "crdc_datahub_mdf.yaml",
-    "prop-file": "crdc_datahub_mdf.yaml",
+    "model-file": "crdc_datahub_mdf.yml",
+    "prop-file": "crdc_datahub_mdf.yml",
     "readme-file": "README.md",
     "loading-file": "",
     "semantics": {
