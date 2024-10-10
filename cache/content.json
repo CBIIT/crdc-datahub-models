@@ -152,5 +152,32 @@
     "versions": [
       "1.9.1"
     ]
+  },
+  "Test MDF": {
+    "model-file": "crdc_datahub_mdf.yaml",
+    "prop-file": "crdc_datahub_mdf.yaml",
+    "readme-file": "README.md",
+    "loading-file": "",
+    "semantics": {
+      "main-nodes": {
+        "program": "Program",
+        "study": "Study",
+        "subject": "Participant",
+        "specimen": "Sample",
+        "data_file": "File"
+      },
+      "file-nodes": {
+        "data_file": {
+          "id-field": "file_id",
+          "name-field": "",
+          "size-field": "file_size",
+          "md5-field": ""
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
   }
 }
