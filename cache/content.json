@@ -149,8 +149,9 @@
         }
       }
     },
-    "current-version": "1.9.1",
+    "current-version": "2.0.0",
     "versions": [
+      "2.0.0",
       "1.9.1"
     ]
   }
