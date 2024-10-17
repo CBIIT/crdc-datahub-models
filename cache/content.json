@@ -4,6 +4,7 @@
     "prop-file": "cds-model-props.yml",
     "readme-file": "README.md",
     "loading-file": "cds-file-examples.zip",
+    "model-navigator-logo": "navigator-icon.png",
     "semantics": {
       "main-nodes": {
         "program": "Program",
