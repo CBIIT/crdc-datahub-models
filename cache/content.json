@@ -1,5 +1,7 @@
 {
   "CDS": {
+    "model-file": "cds-model.yml",
+    "prop-file": "cds-model-props.yml",
     "model-files": [
       "cds-model.yml",
       "cds-model-props.yml"
@@ -38,6 +40,8 @@
     ]
   },
   "ICDC": {
+    "model-file": "icdc-model.yml",
+    "prop-file": "icdc-model-props.yml",
     "model-files": [
       "icdc-model.yml",
       "icdc-model-props.yml"
@@ -70,6 +74,8 @@
     ]
   },
   "CTDC": {
+    "model-file": "ctdc_model_file.yaml",
+    "prop-file": "ctdc_model_properties_file.yaml",
     "model-files": [
       "ctdc_model_file.yaml",
       "ctdc_model_properties_file.yaml"
@@ -100,6 +106,8 @@
     ]
   },
   "CCDI": {
+    "model-file": "ccdi-model.yml",
+    "prop-file": "ccdi-model-props.yml",
     "model-files": [
       "ccdi-model.yml",
       "ccdi-model-props.yml"
@@ -165,6 +173,8 @@
     ]
   },
   "Test MDF": {
+    "model-file": "crdc_datahub_mdf.yml",
+    "prop-file": "crdc_datahub_mdf.yml",
     "model-files": [
       "crdc_datahub_mdf.yml"
     ],
