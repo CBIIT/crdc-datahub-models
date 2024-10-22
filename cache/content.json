@@ -2,6 +2,10 @@
   "CDS": {
     "model-file": "cds-model.yml",
     "prop-file": "cds-model-props.yml",
+    "model-files": [
+      "cds-model.yml",
+      "cds-model-props.yml"
+    ],
     "readme-file": "README.md",
     "loading-file": "cds-file-examples.zip",
     "model-navigator-logo": "navigator-icon.png",
@@ -38,6 +42,10 @@
   "ICDC": {
     "model-file": "icdc-model.yml",
     "prop-file": "icdc-model-props.yml",
+    "model-files": [
+      "icdc-model.yml",
+      "icdc-model-props.yml"
+    ],
     "readme-file": "Data_Model_Navigator_README.md",
     "loading-file": "ICDC_Example_Files.zip",
     "list-delimiter": "*",
@@ -68,6 +76,10 @@
   "CTDC": {
     "model-file": "ctdc_model_file.yaml",
     "prop-file": "ctdc_model_properties_file.yaml",
+    "model-files": [
+      "ctdc_model_file.yaml",
+      "ctdc_model_properties_file.yaml"
+    ],
     "readme-file": "README.md",
     "loading-file": "CTDC_Example_Files.zip",
     "semantics": {
@@ -96,6 +108,10 @@
   "CCDI": {
     "model-file": "ccdi-model.yml",
     "prop-file": "ccdi-model-props.yml",
+    "model-files": [
+      "ccdi-model.yml",
+      "ccdi-model-props.yml"
+    ],
     "readme-file": "README.md",
     "loading-file": "",
     "semantics": {
@@ -159,6 +175,9 @@
   "Test MDF": {
     "model-file": "crdc_datahub_mdf.yml",
     "prop-file": "crdc_datahub_mdf.yml",
+    "model-files": [
+      "crdc_datahub_mdf.yml"
+    ],
     "readme-file": "README.md",
     "loading-file": "crdc_mock_data_files.zip",
     "semantics": {
