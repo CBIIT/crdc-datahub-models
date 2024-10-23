@@ -230,9 +230,10 @@ PropDefinitions:
     Type:
       value_type: number
       units:
-        - pattern: ^\\d+(mg|kg|g)$
-          flavor: Perl
-        - pattern: ^\\d+(lbs|stone)$
+        - kg
+#        - pattern: ^\\d+(mg|kg|g)$
+#          flavor: Perl
+#        - pattern: ^\\d+(lbs|stone)$
   sample_length:
     Type:
       value_type: number
