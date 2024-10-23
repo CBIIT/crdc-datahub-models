@@ -200,5 +200,34 @@
     "versions": [
       "1.0.0"
     ]
+  },
+  "Hidden Model": {
+    "model-file": "hidden_model_mdf.yml",
+    "prop-file": "hidden_model_mdf.yml",
+    "model-files": [
+      "hidden_model_mdf.yml"
+    ],
+    "readme-file": "README.md",
+    "loading-file": "hidden_model_examples.zip",
+    "semantics": {
+      "main-nodes": {
+        "study": "Study",
+        "participant": "Participant",
+        "sample": "Sample",
+        "file": "File"
+      },
+      "file-nodes": {
+        "file": {
+          "id-field": "file_id",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
   }
 }
