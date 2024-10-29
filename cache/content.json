@@ -2,8 +2,13 @@
   "CDS": {
     "model-file": "cds-model.yml",
     "prop-file": "cds-model-props.yml",
+    "model-files": [
+      "cds-model.yml",
+      "cds-model-props.yml"
+    ],
     "readme-file": "README.md",
     "loading-file": "cds-file-examples.zip",
+    "model-navigator-logo": "navigator-icon.png",
     "semantics": {
       "main-nodes": {
         "program": "Program",
@@ -37,6 +42,10 @@
   "ICDC": {
     "model-file": "icdc-model.yml",
     "prop-file": "icdc-model-props.yml",
+    "model-files": [
+      "icdc-model.yml",
+      "icdc-model-props.yml"
+    ],
     "readme-file": "Data_Model_Navigator_README.md",
     "loading-file": "ICDC_Example_Files.zip",
     "list-delimiter": "*",
@@ -67,6 +76,10 @@
   "CTDC": {
     "model-file": "ctdc_model_file.yaml",
     "prop-file": "ctdc_model_properties_file.yaml",
+    "model-files": [
+      "ctdc_model_file.yaml",
+      "ctdc_model_properties_file.yaml"
+    ],
     "readme-file": "README.md",
     "loading-file": "CTDC_Example_Files.zip",
     "semantics": {
@@ -84,6 +97,131 @@
           "name-field": "data_file_name",
           "size-field": "data_file_size",
           "md5-field": "data_file_checksum_value"
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "CCDI": {
+    "model-file": "ccdi-model.yml",
+    "prop-file": "ccdi-model-props.yml",
+    "model-files": [
+      "ccdi-model.yml",
+      "ccdi-model-props.yml"
+    ],
+    "readme-file": "README.md",
+    "loading-file": "ccdi_v2.0.0_fake_data_example_load_files.zip",
+    "semantics": {
+      "main-nodes": {
+        "study": "Study",
+        "participant": "Participant",
+        "sample": "Sample",
+        "study_personnel": "Principal Investigator",
+        "clinical_measure_file": "File",
+        "cytogenomic_file": "File",
+        "methylation_array_file": "File",
+        "pathology_file": "File",
+        "radiology_file": "File",
+        "sequencing_file": "File"
+      },
+      "file-nodes": {
+        "clinical_measure_file": {
+          "id-field": "dcf_indexd_guid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        },
+        "cytogenomic_file": {
+          "id-field": "dcf_indexd_guid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        },
+        "methylation_array_file": {
+          "id-field": "dcf_indexd_guid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        },
+        "pathology_file": {
+          "id-field": "dcf_indexd_guid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        },
+        "radiology_file": {
+          "id-field": "dcf_indexd_guid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        },
+        "sequencing_file": {
+          "id-field": "dcf_indexd_guid",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
+    },
+    "current-version": "2.0.0",
+    "versions": [
+      "2.0.0",
+      "1.9.1"
+    ]
+  },
+  "Test MDF": {
+    "model-file": "crdc_datahub_mdf.yml",
+    "prop-file": "crdc_datahub_mdf.yml",
+    "model-files": [
+      "crdc_datahub_mdf.yml"
+    ],
+    "readme-file": "README.md",
+    "loading-file": "crdc_mock_data_files.zip",
+    "semantics": {
+      "main-nodes": {
+        "study": "Study",
+        "participant": "Participant",
+        "sample": "Sample",
+        "file": "File"
+      },
+      "file-nodes": {
+        "file": {
+          "id-field": "file_id",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      }
+    },
+    "current-version": "1.0.0",
+    "versions": [
+      "1.0.0"
+    ]
+  },
+  "Hidden Model": {
+    "model-file": "hidden_model_mdf.yml",
+    "prop-file": "hidden_model_mdf.yml",
+    "model-files": [
+      "hidden_model_mdf.yml"
+    ],
+    "readme-file": "README.md",
+    "loading-file": "hidden_model_examples.zip",
+    "semantics": {
+      "main-nodes": {
+        "study": "Study",
+        "participant": "Participant",
+        "sample": "Sample",
+        "file": "File"
+      },
+      "file-nodes": {
+        "file": {
+          "id-field": "file_id",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
         }
       }
     },
