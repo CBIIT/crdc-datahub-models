@@ -21,8 +21,9 @@
         }
       }
     },
-    "current-version": "4.0.4",
+    "current-version": "5.0.0",
     "versions": [
+      "5.0.0",
       "4.0.4",
       "4.0.3",
       "4.0.2",
