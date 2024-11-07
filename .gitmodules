@@ -10,3 +10,7 @@
 	path = ctdc-model
 	url = https://github.com/CBIIT/ctdc-model.git
 	branch = develop
+[submodule "ccdi-model"]
+	path = ccdi-model
+	url = https://github.com/CBIIT/ccdi-model.git
+	branch = main
