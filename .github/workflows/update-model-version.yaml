@@ -2,98 +2,209 @@ name: Update Data Model Version
 on:
   schedule:
     - cron: "29 * * * *"   # every hour on 29th minute, randomly chose
-#    - cron: "29 4 * * *"   # every day at 04:29 UTC, randomly chose
-
-#  push:
-#    branches:
-#      - dev
-#      - dev2
+  workflow_dispatch:
 
 jobs:
   update-data-model-version:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - branch-name: dev
+            tag_enabled: false
+#          - branch-name: dev2
+#            tag_enabled: false
+#          - branch-name: qa
+#            tag_enabled: false
+#          - branch-name: qa2
+#            tag_enabled: false
+#          - branch-name: stage
+#            tag_enabled: true  # Enables tag checkout for this branch
+#          - branch-name: prod
+#            tag_enabled: true # Enables tag checkout for this branch
     steps:
       - name: Printing the branch currently working on
-        run: echo "BRANCH_NAME=${{ github.ref_name }}"
-      - name: Check out the branch
-        uses: actions/checkout@v3
-        with:
-          submodules: true  # This ensures submodules are also checked out
-      - name: Update submodule to the latest commit on master
+        run: echo "BRANCH_NAME=${{ matrix.branch-name }}"
+
+
+      - name: Overwrite all files from the submodule
         run: |
-          git submodule init
-          git submodule update --remote --merge
-      - name: Check and create version folders
-        run: |
+          # get the latest version from the cache and overwrite all files
+          # pass if the no version in the cache; meaning never run github action
           content=$(cat cache/content.json)
-          echo "$content" | jq -r 'to_entries[] | "\(.key) \(.value["current-version"]) \(.value["model-file"])"' | while read key current_version model_file; do
-            # uses a prefix path ex) cds-model, icdc-model
-            model_prefix="${model_file%.yml}"
+          echo "$content" | jq -r 'to_entries[] | "\(.key)"' | while read key; do          
+            # store models in the env              
+            CACHE_DIR="cache/CDS"
+            largest_version_folder=$(ls -1 "$CACHE_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
+            echo "Largest semantic version folder: $largest_version_folder"            
+            # The path containing files must be a model-desc
+            model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
             model_path="$model_prefix/model-desc"
-            model_file_path="$model_path/$model_file"
+            cp -r "$model_path/"* "cache/$key/$largest_version_folder/"
           
-            if [ -f "$model_file_path" ] && grep -q '^Version:' "$model_file_path"; then
-              latest_version=$(grep -i '^Version:' "$model_file_path" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')                      
-              if [ "$latest_version" != "$current_version" ]; then
-                echo "New version is detected"
-
-                # Create a new directory if it doesn't exist
-                new_cache_directory="cache/$key/$latest_version"
-                echo "new_cache_directory: $new_cache_directory"
-                if [ ! -d "$new_cache_directory" ]; then
-                  echo "Version $latest_version does NOT exist in cache/$key/. Creating directory..."
-                  mkdir -p "$new_cache_directory"
-                  echo "Directory $new_cache_directory created."
-          
-                  # Copy all existing contents into the new folder   
-                  cp -r "$model_path/"* "$new_cache_directory/"
-                  echo "Copied contents from $model_path to cache/$key/$new_cache_directory."
-                else
-                  echo "Directory $new_cache_directory already exists."
-                fi
-          
-                # Update content.json and handle version mismatch
-                updated_content=$(echo "$content" | jq --arg key "$key" --arg model_v "$latest_version" '
-                  .[$key]["versions"] |= . + [$model_v] |
-                  .[$key]["current-version"] = $model_v
-                ')
-                echo "$updated_content" > cache/content.json
-              fi
+            if git diff --cached --quiet -- "$target_folder"; then
+              echo "No changes to commit for $key"
             else
-              echo "Model file $model_file_path not found. or model file is not properly defined"
+              echo "Detected changes: $key"
+              echo "to_be_updated=${to_be_updated},$key" >> $GITHUB_ENV
+              git commit -m "Detected changes"
             fi
-          done
-
-      - name: Ensure branch is created and checked out
-        run: |
-          git checkout ${{ github.ref_name }} || git checkout -b ${{ github.ref_name }}
-      - name: Configure Git
-        run: |
-          git config --global user.name "test"
-          git config --global user.email "test@nih.gov"
-
-      - name: Stage all files except submodules
-        run: |
-          git add --all
-
-      - name: Check for changes in content.json before committing
-        run: |
-          if git diff --cached --quiet; then
-            echo "No changes to commit for content.json."
-            echo "skip_commit=true" >> $GITHUB_ENV
-          else
-            echo "skip_commit=false" >> $GITHUB_ENV
-          fi
-
-      - name: Commit changes
-        if: env.skip_commit == 'false'
-        run: |
-          git commit -m "Updated the latest model version in the content.json"
-
-      - name: Push changes
-        if: env.skip_commit == 'false'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push origin ${{ github.ref_name }}
+#
+#
+#      - name: Check for any changes before committing
+#        run: |
+#          if git diff --cached --quiet; then
+#            echo "No changes to commit"
+#            echo "skip_commit=true" >> $GITHUB_ENV
+#          else
+#            git commit -m "Detected changes"
+#            echo "skip_commit=false" >> $GITHUB_ENV
+#          fi
+#
+#
+#      - name: Check out the branch
+#        uses: actions/checkout@v3
+#        with:
+#          ref: ${{ matrix.branch-name }}
+#          submodules: true  # This ensures submodules are also checked out
+#          submodules_recursive: true  # Recursively fetches submodules
+#          fetch-depth: 0  # Fetch all history
+#      - name: Fetch all tags in the main repository
+#        if: matrix.tag_enabled == true
+#        run: |
+#          git fetch --tags
+#      - name: Check if tag_enabled is true and Determine and checkout latest tag for main repository
+#        if: matrix.tag_enabled == true
+#        run: |
+#          latest_tag=$(git tag -l "[0-9]*.[0-9]*.[0-9]*" | sort -V | tail -n 1)  # Get latest tag in <major>.<minor>.<patch> format
+#          if [ -n "$latest_tag" ]; then
+#            echo "Checking out latest tag $latest_tag for main repository"
+#            git checkout $latest_tag
+#          else
+#            echo "No valid tag found for the main repository"
+#          fi
+#      - name: Rebase latest tag onto the matrix branch
+#        run: |
+#          git checkout ${{ matrix.branch-name }}   # Switch back to the target branch (dev)
+#          if [ "${{ matrix.tag_enabled }}" = "true" ]; then
+#            git rebase $latest_tag
+#          fi
+#      - name: Update submodule to the latest commit
+#        run: |
+#          git submodule update --remote --recursive
+#          git submodule foreach --recursive '
+#            if [ "${{ matrix.tag_enabled }}" = "true" ]; then
+#              git fetch --tags
+#              latest_tag=$(git tag -l "[0-9]*.[0-9]*.[0-9]*" | sort -V | tail -n 1)  # Get the latest tag in <major>.<minor>.<patch> format
+#              if [ -n "$latest_tag" ]; then
+#                echo "Checking out latest tag $latest_tag for $name"
+#                git checkout $latest_tag
+#              else
+#                echo "No valid tag found for $name"
+#              fi
+#            else
+#              branch=$(git config -f $toplevel/.gitmodules submodule.$name.branch)
+#              echo "Fetching submodule branch: $branch"
+#              git fetch origin $branch
+#            fi
+#            git merge --allow-unrelated-histories FETCH_HEAD || echo "No merge needed"
+#          '
+#      - name: Check and create version folders
+#        run: |
+#          content=$(cat cache/content.json)
+#          echo "$content" | jq -r 'to_entries[] | "\(.key) \(.value["current-version"]) \(.value["model-files"]) \(.value["prop-file"])"' | while read key current_version model_files prop_file; do
+#            # uses a prefix path ex) cds(lowercase) + -model, icdc(lowercase) + -model
+#            model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
+#            model_path="$model_prefix/model-desc"
+#
+#            # Get key in the file array
+#            latest_version=""
+#            model_cache_file=""
+#            for file in $model_files; do
+#              model_file_path="$model_path/$file"
+#              if [ -f "$model_file_path" ] && grep -q '^Version:' "$model_file_path"; then
+#                  model_cache_file="cache/$key/$current_version/$file"
+#                  latest_version=$(grep -i '^Version:' "$model_file_path" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')
+#              fi
+#            done
+#
+#
+#            if [ -n "$model_files" && -n "$latest_version"]; then
+#              model_property_cache_file="cache/$key/$current_version/$prop_file"
+#              latest_version=$(grep -i '^Version:' "$model_file_path" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')
+#              # compare model or model property file changed without any version update.
+#
+#
+#              if [ "$latest_version" = "$current_version" ] ; then
+#                if ! diff "$model_file_path" "$model_cache_file" || ! diff "$model_property_file_path" "$model_property_cache_file"; then
+#                  echo "The model or property files are changed. Replace the files in the cache folder without the model version update."
+#                  cache_model_directory="cache/$key/$current_version"
+#                  # Copy(overwrite) all existing contents into the existing folder
+#                  cp -r "$model_path/"* "cache/$key/$current_version/"
+#                  echo "Copied contents from $model_path to cache/$key/$current_version."
+#                fi
+#              fi
+#              if [ "$latest_version" != "$current_version" ]; then
+#                echo "New version is detected"
+#
+#                # Create a new directory if it doesn't exist
+#                new_cache_directory="cache/$key/$latest_version"
+#                echo "new_cache_directory: $new_cache_directory"
+#                if [ ! -d "$new_cache_directory" ]; then
+#                  echo "Version $latest_version does NOT exist in cache/$key/. Creating directory..."
+#                  mkdir -p "$new_cache_directory"
+#                  echo "Directory $new_cache_directory created."
+#
+#                  # Copy all files from the previous version into the new folder
+#                  prev_version_dir="cache/$key/$current_version/"
+#                  if [ -d "$prev_version_dir" ]; then
+#                    cp -r "$prev_version_dir/." "$new_cache_directory/"
+#                  fi
+#                  # Copy(overwrite) all existing contents into the new folder
+#                  cp -r "$model_path/"* "$new_cache_directory/"
+#                  echo "Copied contents from $model_path to cache/$key/$new_cache_directory."
+#                else
+#                  echo "Directory $new_cache_directory already exists."
+#                fi
+#
+#                # Update content.json and handle version mismatch
+#                updated_content=$(echo "$content" | jq --arg key "$key" --arg model_v "$latest_version" '
+#                  .[$key]["versions"] |= (if index($model_v) == null then [$model_v] + . else . end) |
+#                  .[$key]["current-version"] = $model_v
+#                ')
+#                echo "$updated_content" > cache/content.json
+#              fi
+#            else
+#              echo "Model file $model_file_path not found or model file is not properly defined"
+#            fi
+#          done
+#
+#      - name: Ensure branch is created and checked out
+#        run: |
+#          git checkout ${{ matrix.branch-name }} || git checkout -b ${{ matrix.branch-name }}
+#      - name: Configure Git
+#        run: |
+#          git config --global user.name "GitHub Action"
+#          git config --global user.email "test@nih.gov"
+#
+#      - name: Stage all files includes submodules
+#        run: |
+#          git add --all
+#
+#      - name: Check for any changes before committing
+#        run: |
+#          if git diff --cached --quiet; then
+#            echo "No changes to commit"
+#            echo "skip_commit=true" >> $GITHUB_ENV
+#          else
+#            git commit -m "Detected changes"
+#            echo "skip_commit=false" >> $GITHUB_ENV
+#          fi
+#
+#      - name: Push changes
+#        if: env.skip_commit == 'false'
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: |
+#          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+#          git push origin ${{ matrix.branch-name }}
