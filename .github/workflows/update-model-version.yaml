@@ -47,7 +47,7 @@ jobs:
             else
               echo "Detected changes: $key"
               echo "to_be_updated=${to_be_updated},$key" >> $GITHUB_ENV
-              git commit -m "Detected changes"
+#              git commit -m "Detected changes"
             fi
 #
 #
