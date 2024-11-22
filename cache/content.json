@@ -106,7 +106,7 @@
       "ccdi-model-props.yml"
     ],
     "readme-file": "README.md",
-    "loading-file": "ccdi_v2.0.0_fake_data_example_load_files.zip",
+    "loading-file": "ccdi_fake_data_example_load_files.zip",
     "semantics": {
       "main-nodes": {
         "study": "Study",
