@@ -12,16 +12,16 @@ jobs:
         include:
           - branch-name: dev
             tag_enabled: false
-          - branch-name: dev2
-            tag_enabled: false
-          - branch-name: qa
-            tag_enabled: false
-          - branch-name: qa2
-            tag_enabled: false
-          - branch-name: stage
-            tag_enabled: true  # Enables tag checkout for this branch
-          - branch-name: prod
-            tag_enabled: true # Enables tag checkout for this branch
+#          - branch-name: dev2
+#            tag_enabled: false
+#          - branch-name: qa
+#            tag_enabled: false
+#          - branch-name: qa2
+#            tag_enabled: false
+#          - branch-name: stage
+#            tag_enabled: true  # Enables tag checkout for this branch
+#          - branch-name: prod
+#            tag_enabled: true # Enables tag checkout for this branch
     steps:
       - name: Printing the branch currently working on
         run: echo "BRANCH_NAME=${{ matrix.branch-name }}"
@@ -72,32 +72,79 @@ jobs:
             fi
             git merge --allow-unrelated-histories FETCH_HEAD || echo "No merge needed"
           '
+      - name: Overwrite all files from the model in the submodule
+        run: |
+          # get the latest version from the cache and overwrite all files
+          # pass if the no version in the cache; meaning never run github action
+          content=$(cat cache/content.json)
+          to_be_updated=""
+          echo "$content" | jq -r 'to_entries[] | "\(.key)"' | while read key; do          
+            # store models in the env              
+            CACHE_DIR="cache/$key"
+            largest_version_folder=$(ls -1 "$CACHE_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
+            echo "Largest semantic version folder: $largest_version_folder"            
+            # The path containing files must be a model-desc
+            model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
+            model_path="$model_prefix/model-desc"
+          
+            target_folder="cache/$key/$largest_version_folder/"
+            if [ -d "$target_folder" ]; then
+              echo "copying files.... $target_folder"
+              cp -r "$model_path/"* "$target_folder"
+              git add "$target_folder" # Stage changes in the target folder      
+            fi
+          
+            # no folder has been created => never run => run!
+            # latest folder has been changed => needs to be updated => run!
+            if ! git diff --cached --quiet -- "$target_folder" || ([ ! -d "$target_folder" ] && [ -d "$model_path" ]); then
+              echo "Detected changes: $key"
+              git diff --cached -- "$target_folder" # Show detailed changes for debugging
+              to_be_updated=${to_be_updated:+$to_be_updated,}$model_path
+            else
+              echo "No changes to commit for $key"
+              git diff --cached -- "$target_folder" # Show detailed changes for debugging
+            fi
+          echo "updated_path=$to_be_updated" >> $GITHUB_ENV
+          done
       - name: Check and create version folders
         run: |
           content=$(cat cache/content.json)
-          echo "$content" | jq -r 'to_entries[] | "\(.key) \(.value["current-version"]) \(.value["model-file"]) \(.value["prop-file"])"' | while read key current_version model_file prop_file; do
+          echo "$content" | jq -r 'to_entries[] | "\(.key) \(.value["current-version"]) \(.value["model-files"]) \(.value["prop-file"])"' | while read key current_version model_files prop_file; do
             # uses a prefix path ex) cds(lowercase) + -model, icdc(lowercase) + -model
             model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
             model_path="$model_prefix/model-desc"
-            model_file_path="$model_path/$model_file"
-            model_property_file_path="$model_path/$prop_file"
-            if [ -f "$model_file_path" ] && grep -q '^Version:' "$model_file_path"; then
-              model_cache_file="cache/$key/$current_version/$model_file"
-              model_property_cache_file="cache/$key/$current_version/$prop_file"
-              latest_version=$(grep -i '^Version:' "$model_file_path" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')                      
-              # compare model or model property file changed without any version update.
-              if [ "$latest_version" = "$current_version" ] ; then
-                if ! diff "$model_file_path" "$model_cache_file" || ! diff "$model_property_file_path" "$model_property_cache_file"; then
-                  echo "The model or property files are changed. Replace the files in the cache folder without the model version update."
-                  cache_model_directory="cache/$key/$current_version"
-                  # Copy(overwrite) all existing contents into the existing folder
-                  cp -r "$model_path/"* "cache/$key/$current_version/"
-                  echo "Copied contents from $model_path to cache/$key/$current_version."
+          
+            latest_version=""
+            if [[ "${{env.updated_path}}" == *"$model_path"* ]]; then
+              update_version=""
+              for model_file in $(echo "$model_files" | jq -r '.[]'); do
+                version_file_path="$model_path/$model_file"
+                if [ -f "$version_file_path" ] && grep -q '^Version:' "$version_file_path"; then
+                  version=$(grep -i '^Version:' "$version_file_path" | sed 's/[Vv]ersion:[ vV]*//' | tr -cd '0-9.')
+                  if [[ -n "$version" ]]; then
+                    echo "$version_file_path found version: $version"
+                    update_version="$version"
+                    break
+                  else
+                    echo "$version_file_path has no version"
+                  fi
                 fi
-              fi            
-              if [ "$latest_version" != "$current_version" ]; then
+              done
+              if [[ -n "$update_version" ]]; then
+                echo "$key has the latest version $update_version found"
+                latest_version=$update_version
+              else
+                echo "$key has no version"
+              fi
+            fi
+          
+            # if the model path exits, files are overwrittin already; contents only updated already without version change            
+            if [ -d "$model_path" ]; then          
+              if [ "$latest_version" = "$current_version" ] && [[ "${{env.updated_path}}" == *"$model_path"* ]]; then
+                echo "Contents updated without any version change"
+              fi
+              if [ "$latest_version" != "$current_version" ] && [[ -n "$latest_version" ]]; then
                 echo "New version is detected"
-
                 # Create a new directory if it doesn't exist
                 new_cache_directory="cache/$key/$latest_version"
                 echo "new_cache_directory: $new_cache_directory"
@@ -126,7 +173,7 @@ jobs:
                 echo "$updated_content" > cache/content.json
               fi
             else
-              echo "Model file $model_file_path not found or model file is not properly defined"
+              echo "Model file $model_path not found or model file is not properly defined"
             fi
           done
 
