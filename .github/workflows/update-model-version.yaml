@@ -22,6 +22,11 @@ jobs:
 #            tag_enabled: true  # Enables tag checkout for this branch
 #          - branch-name: prod
 #            tag_enabled: true # Enables tag checkout for this branch
+    # These models will be skipped from running the action
+    env:
+      SKIP_MODEL: |
+        - Hidden Model
+        - Test MDF
     steps:
       - name: Printing the branch currently working on
         run: echo "BRANCH_NAME=${{ matrix.branch-name }}"
@@ -79,6 +84,11 @@ jobs:
           content=$(cat cache/content.json)
           to_be_updated=""
           echo "$content" | jq -r 'to_entries[] | "\(.key)"' | while read key; do          
+            SKIP_MODELS=$(echo "$SKIP_MODEL" | sed 's/- //g' | tr '\n' ' ')
+            if [[ " $SKIP_MODELS " =~ " $key " ]]; then
+                echo "Skipping Model: $key"
+                continue
+            fi
             # store models in the env              
             CACHE_DIR="cache/$key"
             largest_version_folder=$(ls -1 "$CACHE_DIR" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
@@ -94,8 +104,7 @@ jobs:
               git add "$target_folder" # Stage changes in the target folder      
             fi
           
-            # no folder has been created => never run => run!
-            # latest folder has been changed => needs to be updated => run!
+            # run if no folder has been created or latest version folder has been updated
             if ! git diff --cached --quiet -- "$target_folder" || ([ ! -d "$target_folder" ] && [ -d "$model_path" ]); then
               echo "Detected changes: $key"
               git diff --cached -- "$target_folder" # Show detailed changes for debugging
