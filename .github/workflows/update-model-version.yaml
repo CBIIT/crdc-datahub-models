@@ -109,6 +109,9 @@ jobs:
               echo "Detected changes: $key"
               git diff --cached -- "$target_folder" # Show detailed changes for debugging
               to_be_updated=${to_be_updated:+$to_be_updated,}$model_path
+              # needs to reset overwritten files
+              git reset "$target_folder"
+              git checkout -- "$target_folder"
             else
               echo "No changes to commit for $key"
               git diff --cached -- "$target_folder" # Show detailed changes for debugging
@@ -151,6 +154,9 @@ jobs:
             if [ -d "$model_path" ]; then          
               if [ "$latest_version" = "$current_version" ] && [[ "${{env.updated_path}}" == *"$model_path"* ]]; then
                 echo "Contents updated without any version change"
+                target_folder="cache/$key/$latest_version/"
+                cp -r "$model_path/"* "$target_folder"
+                git add "$target_folder" # Stage changes in the target folder
               fi
               if [ "$latest_version" != "$current_version" ] && [[ -n "$latest_version" ]]; then
                 echo "New version is detected"
