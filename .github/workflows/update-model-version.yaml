@@ -12,10 +12,10 @@ jobs:
         include:
           - branch-name: dev
             tag_enabled: false
-#          - branch-name: dev2
-#            tag_enabled: false
-#          - branch-name: qa
-#            tag_enabled: false
+          - branch-name: dev2
+            tag_enabled: false
+          - branch-name: qa
+            tag_enabled: false
 #          - branch-name: qa2
 #            tag_enabled: false
 #          - branch-name: stage
