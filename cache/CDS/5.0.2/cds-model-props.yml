@@ -1276,7 +1276,6 @@ PropDefinitions:
     Req: 'Yes'
     Type:
       value_type: list
-      item_type: string
       Enum:
       - Archer Fusion
       - Bisulfite-Seq
