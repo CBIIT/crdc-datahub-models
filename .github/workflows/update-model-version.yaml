@@ -96,12 +96,21 @@ jobs:
             # The path containing files must be a model-desc
             model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
             model_path="$model_prefix/model-desc"
+            model_navigator_path="$model_prefix/model-navigator-resources"
           
             target_folder="cache/$key/$largest_version_folder/"
             if [ -d "$target_folder" ]; then
-              echo "copying files.... $target_folder"
-              cp -r "$model_path/"* "$target_folder"
-              git add "$target_folder" # Stage changes in the target folder      
+              if [ -d "$model_path" ]; then
+                echo "copying files from $model_path.... $target_folder"
+                cp -r "$model_path/"* "$target_folder"
+                git add "$target_folder" # Stage changes in the target folder                    
+              fi
+          
+              if [ -d "$model_navigator_path" ]; then
+                echo "copying files from $model_navigator_path.... $target_folder"
+                cp -r "$model_navigator_path/"* "$target_folder"
+                git add "$target_folder" # Stage changes in the target folder                    
+              fi
             fi
           
             # run if no folder has been created or latest version folder has been updated
@@ -125,6 +134,7 @@ jobs:
             # uses a prefix path ex) cds(lowercase) + -model, icdc(lowercase) + -model
             model_prefix=$(echo "${key}-model" | tr 'A-Z' 'a-z')
             model_path="$model_prefix/model-desc"
+            model_navigator_path="$model_prefix/model-navigator-resources"
           
             latest_version=""
             if [[ "${{env.updated_path}}" == *"$model_path"* ]]; then
@@ -156,6 +166,10 @@ jobs:
                 echo "Contents updated without any version change"
                 target_folder="cache/$key/$latest_version/"
                 cp -r "$model_path/"* "$target_folder"
+          
+                if [ -d "$model_navigator_path" ]; then
+                  cp -r "$model_navigator_path/"* "$target_folder"
+                fi
                 git add "$target_folder" # Stage changes in the target folder
               fi
               if [ "$latest_version" != "$current_version" ] && [[ -n "$latest_version" ]]; then
@@ -176,6 +190,11 @@ jobs:
                   # Copy(overwrite) all existing contents into the new folder   
                   cp -r "$model_path/"* "$new_cache_directory/"
                   echo "Copied contents from $model_path to cache/$key/$new_cache_directory."
+                  if [ -d "$model_navigator_path" ]; then
+                    cp -r "$model_navigator_path/"* "$new_cache_directory/"
+                    echo "Copied contents from $model_navigator_path to cache/$key/$new_cache_directory."
+                  fi
+          
                 else
                   echo "Directory $new_cache_directory already exists."
                 fi
