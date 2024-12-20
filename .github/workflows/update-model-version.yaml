@@ -16,8 +16,8 @@ jobs:
             tag_enabled: false
           - branch-name: qa
             tag_enabled: false
-          - branch-name: qa2
-            tag_enabled: false
+#          - branch-name: qa2
+#            tag_enabled: false
           - branch-name: stage
             tag_enabled: true  # Enables tag checkout for this branch
           - branch-name: prod
