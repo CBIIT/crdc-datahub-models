@@ -23,12 +23,12 @@ PropDefinitions:
     - Semiautomatic
     - Automatic
     - Not applicable
-    Term:
-    - Origin: caDSR
-      Original Source: CDS
-      Code: 14607284
-      Value: Deidentification Method Type
-      Version: '1.00'
+    # Term:
+    # - Origin: caDSR
+    #   Original Source: CDS
+    #   Code: 14607284
+    #   Value: Deidentification Method Type
+    #   Version: '1.00'
   de_identification_method_description:
     Desc: Description of the process of removing potentially identifying data or data elements to render data into a form that does not identify individuals and where identification is not likely to take place.
     Type: string
@@ -170,12 +170,12 @@ PropDefinitions:
     Desc: Site where images are associated
     Req: true
     Type: string
-    Term:
-    - Origin: caDSR
-      Original Source: CDS
-      Code: 6161035
-      Value: ICD-O Origin of Disease Anatomic Site
-      Version: '1.00'
+    # Term:
+    # - Origin: caDSR
+    #   Original Source: CDS
+    #   Code: 6161035
+    #   Value: ICD-O Origin of Disease Anatomic Site
+    #   Version: '1.00'
   performed_imaging_study_description:
     Desc: The textual representation of the certain or salient aspects, characteristics, or features of the imaging study. [Adapted from www.businessdictionary.com]
     Req: true
@@ -5763,12 +5763,12 @@ PropDefinitions:
     - Yolk sac tumor
     - 'Source Data Not Available '
     Req: true
-    Term:
-    - Origin: caDSR
-      Original Source: CDS
-      Code: 13606067
-      Value: ICD Label/Name
-      Version: '1.00'
+    # Term:
+    # - Origin: caDSR
+    #   Original Source: CDS
+    #   Code: 13606067
+    #   Value: ICD Label/Name
+    #   Version: '1.00'
   primary_site:
     Desc: Anatomical site of disease in primary diagnosis for this diagnosis
     Enum:
@@ -7128,12 +7128,12 @@ PropDefinitions:
     - Unknown
     - Not Reported
     - Not Allowed To Collect
-    Term:
-    - Origin: caDSR
-      Original Source: DSS
-      Code: 13529783
-      Value: Disease Progression Or Recurrence Indicator
-      Version: '1.00'
+    # Term:
+    # - Origin: caDSR
+    #   Original Source: DSS
+    #   Code: 13529783
+    #   Value: Disease Progression Or Recurrence Indicator
+    #   Version: '1.00'
   # study
   role_or_affiliation:
     Desc: The text that describes the distinguishable characteristics of the action or activity assigned to or required or expected of a person in a formal association with a group or organization.
