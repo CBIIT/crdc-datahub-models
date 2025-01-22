@@ -5,6 +5,7 @@
       "cds-model-props.yml"
     ],
     "readme-file": "README.md",
+    "release-notes": "release-notes.md",
     "loading-file": "cds-file-examples.zip",
     "model-navigator-logo": "navigator-icon.png",
     "semantics": {
@@ -48,6 +49,7 @@
       "icdc-model-props.yml"
     ],
     "readme-file": "Data_Model_Navigator_README.md",
+    "release-notes": "",
     "loading-file": "ICDC_Example_Files.zip",
     "list-delimiter": "*",
     "omit-DCF-prefix": true,
@@ -80,6 +82,7 @@
       "ctdc_model_properties_file.yaml"
     ],
     "readme-file": "README.md",
+    "release-notes": "",
     "loading-file": "CTDC_Example_Files.zip",
     "semantics": {
       "main-nodes": {
@@ -111,6 +114,7 @@
       "ccdi-model-props.yml"
     ],
     "readme-file": "README.md",
+    "release-notes": "",
     "loading-file": "ccdi_v2.0.0_fake_data_example_load_files.zip",
     "semantics": {
       "main-nodes": {
@@ -175,6 +179,7 @@
       "crdc_datahub_mdf.yml"
     ],
     "readme-file": "README.md",
+    "release-notes": "release-notes.md",
     "loading-file": "crdc_mock_data_files.zip",
     "semantics": {
       "main-nodes": {
@@ -202,6 +207,7 @@
       "hidden_model_mdf.yml"
     ],
     "readme-file": "README.md",
+    "release-notes": "",
     "loading-file": "hidden_model_examples.zip",
     "semantics": {
       "main-nodes": {
