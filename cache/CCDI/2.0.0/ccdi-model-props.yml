@@ -1,4 +1,15 @@
 PropDefinitions:
+  #pathology_file
+  slim_url:
+    Desc: File path to IDS SLIM viewer
+    Term: 
+      - Origin: caDSR
+        Code: '11556141'
+        Value: Electronic File Pathname Text
+        Version: "2.00"
+    Type: string
+    Req: false
+    Private: false
   #diagnosis
   laterality:
     Desc: Designates the side of the body where disease is found.
@@ -5112,15 +5123,12 @@ PropDefinitions:
       value_type: list
       item_type:
         - "Archer Fusion"
-        - "Bisulfite-Seq"
         - "DNA-Seq"
+        - "Methylation Analysis"
         - "Methylation Array"
         - "Pathological"
         - "Radiological"
-        - "RNA-Seq"
-        - "scRNA-Seq"
-        - "WGA"
-        - "WXS"  
+        - "RNA-Seq" 
     Req: false
     Strict: true
     Private: false  
