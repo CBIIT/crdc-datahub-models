@@ -5,7 +5,7 @@
       "cds-model-props.yml"
     ],
     "readme-file": "README.md",
-    "release-notes": "release-notes.md",
+    "release-notes": "version-history.md",
     "loading-file": "cds-file-examples.zip",
     "model-navigator-logo": "navigator-icon.png",
     "semantics": {
