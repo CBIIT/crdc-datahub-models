@@ -1,3 +1,6 @@
+### 6.0.0 (Released 2/13/2025)
+- Renaming the prop: "**_gender_**" to "**_sex_**".
+
 ### 6.0.0 (Released 1/2/2025)
 - Added the prop: "**_is\_supplementary\_file_**" to the node: "**_file_**".
 - Added the prop: "**_release\_datetime_**" to the node: "**_file_**".
