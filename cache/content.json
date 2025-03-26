@@ -23,6 +23,10 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "study_name"
       }
     },
     "current-version": "6.0.2",
@@ -72,6 +76,10 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "clinical_study_name"
       }
     },
     "current-version": "1.0.0",
@@ -103,6 +111,10 @@
           "size-field": "data_file_size",
           "md5-field": "data_file_checksum_value"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "study_name"
       }
     },
     "current-version": "1.2.0",
@@ -170,6 +182,9 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "studyName": "study_name"
       }
     },
     "current-version": "2.1.0",
