@@ -29,8 +29,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "6.0.2",
+    "current-version": "6.0.3",
     "versions": [
+      "6.0.3",
       "6.0.2",
       "6.0.1",
       "6.0.0",
