@@ -23,6 +23,10 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "study_name"
       }
     },
     "current-version": "6.0.4",
@@ -54,6 +58,7 @@
       "icdc-model-props.yml"
     ],
     "readme-file": "Data_Model_Navigator_README.md",
+    "release-notes": "",
     "loading-file": "ICDC_Example_Files.zip",
     "list-delimiter": "*",
     "omit-DCF-prefix": true,
@@ -73,6 +78,10 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "clinical_study_name"
       }
     },
     "current-version": "1.0.0",
@@ -86,6 +95,7 @@
       "ctdc_model_properties_file.yaml"
     ],
     "readme-file": "README.md",
+    "release-notes": "",
     "loading-file": "CTDC_Example_Files.zip",
     "semantics": {
       "main-nodes": {
@@ -103,6 +113,10 @@
           "size-field": "data_file_size",
           "md5-field": "data_file_checksum_value"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "study_name"
       }
     },
     "current-version": "1.2.0",
@@ -118,7 +132,8 @@
       "ccdi-model-props.yml"
     ],
     "readme-file": "README.md",
-    "loading-file": "ccdi_v2.0.0_fake_data_example_load_files.zip",
+    "release-notes": "",
+    "loading-file": "ccdi_fake_data_example_load_files.zip",
     "semantics": {
       "main-nodes": {
         "study": "Study",
@@ -169,6 +184,9 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "studyName": "study_name"
       }
     },
     "current-version": "2.1.0",
@@ -183,6 +201,7 @@
       "crdc_datahub_mdf.yml"
     ],
     "readme-file": "README.md",
+    "release-notes": "release-notes.md",
     "loading-file": "crdc_mock_data_files.zip",
     "semantics": {
       "main-nodes": {
@@ -210,6 +229,7 @@
       "hidden_model_mdf.yml"
     ],
     "readme-file": "README.md",
+    "release-notes": "",
     "loading-file": "hidden_model_examples.zip",
     "semantics": {
       "main-nodes": {
