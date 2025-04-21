@@ -25,8 +25,9 @@
         }
       }
     },
-    "current-version": "6.0.4",
+    "current-version": "7.0.0",
     "versions": [
+      "7.0.0",
       "6.0.4",
       "6.0.3",
       "6.0.2",
