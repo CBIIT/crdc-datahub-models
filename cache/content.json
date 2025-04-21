@@ -1,4 +1,39 @@
 {
+  "RandomModel": {
+    "model-files": [
+      "cds-model.yml",
+      "cds-model-props.yml"
+    ],
+    "readme-file": "README.md",
+    "release-notes": "version-history.md",
+    "loading-file": "cds-file-examples.zip",
+    "model-navigator-logo": "navigator-icon.png",
+    "semantics": {
+      "main-nodes": {
+        "program": "Program",
+        "study": "Study",
+        "participant": "Participant",
+        "sample": "Sample",
+        "file": "File"
+      },
+      "file-nodes": {
+        "file": {
+          "id-field": "file_id",
+          "name-field": "file_name",
+          "size-field": "file_size",
+          "md5-field": "md5sum"
+        }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "study_name"
+      }
+    },
+    "current-version": "6.0.4",
+    "versions": [
+      "6.0.4",
+    ]
+  },
   "CDS": {
     "model-files": [
       "cds-model.yml",
