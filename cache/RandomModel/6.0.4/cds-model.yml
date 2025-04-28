@@ -22,7 +22,7 @@ Nodes:
   study:
     Desc: "The narrative title used as a textual label for a research data collection. Example – University of Texas PDX Development and Trial Center Grant"
     Tags:
-      Category: xyz
+      Category: participant
       Assignment: core
       Class: primary
       Template: 'Yes'
