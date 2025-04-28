@@ -158,7 +158,7 @@ Nodes:
   file:
     Desc: "A set of related records kept together provided by a submitter."
     Tags:
-      Category: data_file
+      Category: imaging
       Assignment: core
       Class: primary
       Template: 'Yes'
