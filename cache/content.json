@@ -218,6 +218,10 @@
           "size-field": "file_size",
           "md5-field": "md5sum"
         }
+      },
+      "property-names": {
+        "programName": "program_name",
+        "studyName": "study_name"
       }
     },
     "current-version": "1.0.0",
