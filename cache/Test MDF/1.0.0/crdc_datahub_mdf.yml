@@ -241,7 +241,8 @@ PropDefinitions:
         - path/to/sample/length/units/
   sample_id:
     Type:
-      pattern: ^[A-Z]{2,5}-\d{4,8}(_[A-Z\d]{2,4})?$
+      # pattern: ^[A-Z]{2,5}-\d{4,8}(_[A-Z\d]{2,4})?$
+      pattern: "[a-z"
       flavor: JS
     Key: true
   sample_type:
