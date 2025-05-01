@@ -88,7 +88,7 @@
       "ctdc_model_properties_file.yaml"
     ],
     "readme-file": "README.md",
-    "release-notes": "",
+    "release-notes": "version-history.md",
     "loading-file": "CTDC_Example_Files.zip",
     "semantics": {
       "main-nodes": {
