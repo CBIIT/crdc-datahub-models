@@ -215,7 +215,9 @@
         "fileType": "pdf",
         "prefix": "ICDC_",
         "downloadPrefix": "ICDC_",
-        "fileTransferManifestName": "ICDC_"
+        "fileTransferManifestName": "ICDC_",
+        "footnote": "https://hub.datacommons.cancer.gov/model-navigator/ICDC",
+        "landscape": true
       },
       "iconMap": {
         "administrative": "administrative",
