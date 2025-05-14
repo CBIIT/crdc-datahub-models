@@ -9,7 +9,7 @@ Nodes:
       Prop: diagnosis_id
       Composition:
         - sample.sample_id
-        - disease_type 
+        - case_type 
     Props:
       - diagnosis_id
       - diagnosis
