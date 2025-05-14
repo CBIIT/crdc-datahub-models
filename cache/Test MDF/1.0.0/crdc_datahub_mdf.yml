@@ -6,10 +6,7 @@ Tags:
 Nodes:
   diagnosis:
     Props:
-      - diagnosis_id:
-        Composition:
-        - sample.sample_id
-        - disease_type 
+      - diagnosis_id
       - diagnosis
       - case_type
     Desc: Properties that describe a participant's disease(s).
