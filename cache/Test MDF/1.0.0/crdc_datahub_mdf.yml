@@ -5,6 +5,11 @@ Tags:
   Model: Sample
 Nodes:
   diagnosis:
+    Key:
+      Prop: diagnosis_id
+      Composition:
+        - sample.sample_id
+        - disease_type 
     Props:
       - diagnosis_id
       - diagnosis
@@ -143,13 +148,6 @@ PropDefinitions:
     Src: CRDC
     Key: true
     Nul: false
-    Composition_rule:
-      Composition:
-        - sample.sample_id
-        - disease_type 
-      Connector: '_' 
-      Prefix: 'DIAG'
-      Suffix: 'DH-Gen'
   diagnosis:
     Enum: [https:/icdo3.org/diagnosis_codes_and_terms/123]
     Req: Preferred
