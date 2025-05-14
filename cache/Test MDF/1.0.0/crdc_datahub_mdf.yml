@@ -6,7 +6,10 @@ Tags:
 Nodes:
   diagnosis:
     Props:
-      - diagnosis_id
+      - diagnosis_id:
+        Composition:
+        - sample.sample_id
+        - disease_type 
       - diagnosis
       - case_type
     Desc: Properties that describe a participant's disease(s).
@@ -143,6 +146,13 @@ PropDefinitions:
     Src: CRDC
     Key: true
     Nul: false
+    Composition_rule:
+      Composition:
+        - sample.sample_id
+        - disease_type 
+      Connector: '_' 
+      Prefix: 'DIAG'
+      Suffix: 'DH-Gen'
   diagnosis:
     Enum: [https:/icdo3.org/diagnosis_codes_and_terms/123]
     Req: Preferred
