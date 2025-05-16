@@ -5,6 +5,9 @@ Tags:
   Model: Sample
 Nodes:
   diagnosis:
+    Key:
+        - sample.sample_id
+        - case_type 
     Props:
       - diagnosis_id
       - diagnosis
