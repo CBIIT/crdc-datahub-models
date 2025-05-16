@@ -6,8 +6,6 @@ Tags:
 Nodes:
   diagnosis:
     Key:
-      Prop: diagnosis_id
-      Composition:
         - sample.sample_id
         - case_type 
     Props:
