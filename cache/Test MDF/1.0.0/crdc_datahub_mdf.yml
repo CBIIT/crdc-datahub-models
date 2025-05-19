@@ -6,7 +6,7 @@ Tags:
 Nodes:
   diagnosis:
     Key:
-        - sample.sample_id
+        - participant.participant_id
         - case_type 
     Props:
       - diagnosis_id
