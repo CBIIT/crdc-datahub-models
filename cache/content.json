@@ -177,8 +177,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "7.0.0",
+    "current-version": "8.0.0",
     "versions": [
+      "8.0.0",
       "7.0.0",
       "6.0.4",
       "6.0.3",
