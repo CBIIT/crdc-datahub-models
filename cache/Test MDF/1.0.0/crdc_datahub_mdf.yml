@@ -5,7 +5,7 @@ Tags:
   Model: Sample
 Nodes:
   diagnosis:
-    Key:
+    CompKey:
         - participant.participant_id
         - case_type 
     Props:
