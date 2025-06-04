@@ -19,8 +19,11 @@
         "landscape": true
       },
       "iconMap": {
+        "administrative": "administrative",
         "study": "study",
         "case": "case",
+        "clinical": "clinical",
+        "biospecimen": "biospecimen",
         "data_file": "data_file"
       },
       "facetFilterSearchData": [
