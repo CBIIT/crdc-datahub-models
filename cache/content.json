@@ -180,8 +180,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "8.0.1",
+    "current-version": "8.0.2",
     "versions": [
+      "8.0.2",
       "8.0.1",
       "8.0.0",
       "7.0.0",
