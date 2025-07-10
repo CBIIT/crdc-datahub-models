@@ -612,7 +612,7 @@
       "main-nodes": {
         "program": "Program",
         "study": "Study",
-        "subject": "Participant",
+        "participant": "Participant",
         "specimen": "Sample",
         "data_file": "File",
         "principal_investigator": "Principal Investigator"
