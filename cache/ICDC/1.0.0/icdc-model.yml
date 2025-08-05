@@ -396,21 +396,20 @@ Nodes:
   #     Class: secondary
   #     Template: 'No'
   #   Props: null
-  # proposing deprecation or removal the image_collection node as it contains no data across ingested studies as of 7/16/24
-  # image_collection:
-  #   Desc: The Image Collection node is comprised of properties which describe collections of images that are associated with any given study/trial. These properties characterize such image collections in terms of the types of images they contain, where the collections are hosted, and how they can be accessed.
-  #   Tags:
-  #     Category: study
-  #     Assignment: core
-  #     Class: secondary
-  #     Template: 'Yes'
-  #   Props:
-  #     - image_collection_name
-  #     - image_type_included
-  #     - image_collection_url
-  #     - repository_name
-  #     - collection_access
-  #     - crdc_id
+  image_collection:
+     Desc: The Image Collection node is comprised of properties which describe collections of images that are associated with any given study/trial. These properties characterize such image collections in terms of the types of images they contain, where the collections are hosted, and how they can be accessed.
+     Tags:
+       Category: study
+       Assignment: core
+       Class: secondary
+       Template: 'Yes'
+     Props:
+       - image_collection_name
+       - image_type_included
+       - image_collection_url
+       - repository_name
+       - collection_access
+       - crdc_id
   physical_exam:
     Desc: Properties within the Physical Exam node detail observations around the status of multiple body systems as of a patient enrolled in a clinical trial, as of that patient being examined by a veterinarian during a scheduled visit to the appropriate study site.
     Tags:
@@ -627,8 +626,6 @@ Relationships:
         Mul: one_to_one # changed form many_to_one to one_to_one given that thus far, we've only ever needed to define a single primary  diagnosis, and as elegant as supporting multiple diagnoses might appear, it is becoming more trouble than it's worth
       - Src: cycle
         Dst: case
-      - Src: follow_up
-        Dst: case
       - Src: sample
         Dst: case
     # to accommodate a Sample being directly associated with a Case, rather than being only indirectly associated with a Case through a Visit, etc.
@@ -697,8 +694,8 @@ Relationships:
   on_visit:
     Mul: many_to_one
     Ends:
-      - Src: agent_administration
-        Dst: visit
+      # - Src: agent_administration
+      #   Dst: visit
       - Src: sample
         Dst: visit
       - Src: physical_exam
@@ -725,8 +722,8 @@ Relationships:
     Ends:
       - Src: file
         Dst: assay
-      - Src: image
-        Dst: assay
+      # - Src: image
+      #   Dst: assay
     Props: null
   from_diagnosis:
     Mul: many_to_one
