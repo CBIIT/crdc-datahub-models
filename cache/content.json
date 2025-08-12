@@ -449,7 +449,7 @@
         "clinical_trial": "clinical_trial",
         "clinical": "clinical",
         "analysis": "analysis",
-        "data_file": "data_file"
+        "file": "data_file"
       },
       "facetFilterSearchData": [
         {
@@ -615,11 +615,11 @@
         "study": "Study",
         "participant": "Participant",
         "specimen": "Sample",
-        "data_file": "File",
+        "file": "File",
         "principal_investigator": "Principal Investigator"
       },
       "file-nodes": {
-        "data_file": {
+        "file": {
           "id-field": "data_file_uuid",
           "name-field": "data_file_name",
           "size-field": "data_file_size",
