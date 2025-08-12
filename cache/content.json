@@ -450,7 +450,7 @@
         "clinical_trial": "clinical_trial",
         "clinical": "clinical",
         "analysis": "analysis",
-        "data_file": "data_file"
+        "file": "data_file"
       },
       "facetFilterSearchData": [
         {
