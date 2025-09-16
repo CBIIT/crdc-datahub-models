@@ -1089,7 +1089,7 @@
         "participant": "Participant",
         "specimen": "Sample",
         "data_file": "File",
-        "principal_investigator": "Principal Investigator"
+        "study_personnel": "Principal Investigator"
       },
       "file-nodes": {
         "file": {
