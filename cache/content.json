@@ -1092,7 +1092,7 @@
         "study_personnel": "Principal Investigator"
       },
       "file-nodes": {
-        "file": {
+        "data_file": {
           "id-field": "data_file_uuid",
           "name-field": "data_file_name",
           "size-field": "data_file_size",
