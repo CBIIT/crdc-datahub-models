@@ -165,7 +165,8 @@
         "study": "Study",
         "participant": "Participant",
         "sample": "Sample",
-        "file": "File"
+        "file": "File",
+        "investigator": "Principal Investigator"
       },
       "file-nodes": {
         "file": {
