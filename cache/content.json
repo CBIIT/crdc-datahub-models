@@ -217,6 +217,7 @@
     ],
     "readme-file": "Data_Model_Navigator_README.md",
     "loading-file": "ICDC_Example_Files.zip",
+    "release-notes": "version.md",
     "model-navigator-config": {
       "pageTitle": "ICDC Data Model",
       "pdfConfig": {
