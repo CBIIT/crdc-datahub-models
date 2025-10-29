@@ -217,7 +217,7 @@
       "icdc-model-props.yml"
     ],
     "readme-file": "Data_Model_Navigator_README.md",
-    "release-notes": "",
+    "release-notes": "version.md",
     "loading-file": "ICDC_Example_Files.zip",
     "model-navigator-config": {
       "pageTitle": "ICDC Data Model",
