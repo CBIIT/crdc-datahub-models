@@ -421,8 +421,9 @@
         "studyName": "clinical_study_name"
       }
     },
-    "current-version": "1.0.0",
+    "current-version": "1.1.0",
     "versions": [
+      "1.1.0",
       "1.0.0"
     ]
   },
