@@ -181,8 +181,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "11.0.0",
+    "current-version": "11.0.1",
     "versions": [
+      "11.0.1",
       "11.0.0",
       "10.0.1",
       "10.0.0",
