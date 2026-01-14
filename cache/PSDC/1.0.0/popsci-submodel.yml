@@ -1,0 +1,143 @@
+Nodes:
+  data_collection_category:
+    Desc: text here
+    Props: null
+  data_collection_category_grouping:
+    Desc: The Data Collection Category Grouping node defines the names of the upper-level groupings or "families" to which the various specific data collection categories belong, defines the order in which the data collection category groupings are to be displayed within the UI, defines which specific data collection categories belong to each grouping, and defines the order in which specific data collection categories are to be displayed within the UI under their parental grouping.
+    Props:
+      - data_collection_category_grouping_a
+      - data_collection_category_grouping_b
+      - data_collection_category_grouping_c
+      - data_collection_category_grouping_d
+      - data_collection_category_grouping_e
+      - data_collection_category_grouping_f
+      - data_collection_category_grouping_g
+      - data_collection_category_grouping_h
+PropDefinitions:
+  # data_collection_category_grouping
+  data_collection_category_grouping_a:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Demographics, Lifestyle, Life Events and Quality of Life
+    Enum:
+      - Age
+      - Biological Sex
+      - Sexual Orientation and Gender Identity
+      - Ethnicity and Race
+      - Education Level
+      - Employment Status
+      - Residential Information
+      - Language/Country of Origin
+      - Life Events, Beliefs, Values
+      - Marital Status
+      - Quality of Life
+      - Social Support
+      - Socio-Economic Status
+    Tags:
+      Labeled: DEMOGRAPHICS / LIFESTYLE / LIFE EVENTS / QUALITY OF LIFE
+      Rank: "1"
+  data_collection_category_grouping_b:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Alcohol Consumption, Tobacco Use and Drug Use
+    Enum:
+      - Alcohol Consumption
+      - Cigarette Smoking
+      - Other Tobacco Products
+      - Drug Use
+    Tags:
+      Labeled: ALCOHOL / TOBACCO / DRUG USE
+      Rank: "2"
+  data_collection_category_grouping_c:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Diet and Nutrition
+    Enum:
+      - Dietary Intake
+      - Dietary Supplement Use
+    Tags:
+      Labeled: DIET / NUTRITION
+      Rank: "3"
+  data_collection_category_grouping_d:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Physical Activity and Energy Balance
+    Enum:
+      - Physical Activity
+      - Physical Function Measures
+    Tags:
+      Labeled: PHYSICAL ACTIVITY / ENERGY BALANCE
+      Rank: "4"
+  data_collection_category_grouping_e:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Anthropometry
+    Enum:
+      - Self-Reported Anthropometry
+      - Measured Anthropometry
+    Tags:
+      Labeled: ANTHROPOMETRY
+      Rank: "5"
+  data_collection_category_grouping_f:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Reproductive Health History
+    Enum:
+      - Puberty, Menstruation, and Menopause
+      - Pregnancy and Parity
+      - Breastfeeding
+      - Contraception
+      - Hormone Replacement
+      - Sexual Behavior and Health
+    Tags:
+      Rank: "6"
+      Labeled: REPRODUCTIVE HEALTH HISTORY
+  data_collection_category_grouping_g:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Environmental or Occupational Exposures
+    Enum:
+      - Housing Exposures
+      - Workplace Exposures
+      - Radiation Exposure
+      - Chemical Exposure
+    Tags:
+      Labeled: ENVIRONMENTAL OR OCCUPATIONAL EXPOSURES
+      Rank: "7"
+  data_collection_category_grouping_h:
+    Desc: This Data Collection Category Grouping encompasses data collection relating to Medical / Health Status / Health History
+    Enum:
+      - Health Insurance Status #Medical / Health Status / Health History
+      - Screening
+      - Immunization
+      - Sleep Habits
+      - Fatigue
+      - Cognitive Function
+      - Depression
+      - Family History of Cancer
+      - Family History of Heart Disease
+      - Family History of Diabetes
+      - Other Family History
+      - Prescription Medication Use
+      - Complementary and Alternative Medicine
+      - Non-Prescription Medication
+      - Other Medical Conditions
+      - Other Psychosocial Variables
+      - Psychological Measures
+      - Cancer Treatment
+      - Other Medical Treatements
+      - Infectious and Parasitic Diseases
+      - Neoplasms
+      - Neoplasms, Blood, Blood-forming Organs
+      - Endocrine, Nutritional, Metabolic
+      - Mental and Behavioral Disorders
+      - Nervous System
+      - Eye and Adnexa, Ear and Mastoid Process
+      - Circulatory System
+      - Respiratory System
+      - Digestive System
+      - Skin and Subcutaneous Tissue
+      - Musculoskeletal and Connective Tissue
+      - Genitourinary System
+      - Pregnancy, Childbirth and the Puerperium
+      - Certain Conditions Originating in the Perinatal Period
+      - Congenital Malformations, Deformations and Chromosomal Abnormalities
+      - Symptoms, Signs and Abnormal Clinical and Lab Findings
+      - Injury, Poisoning, Certain Other Consequences of External Causes
+      - Vital Status
+    Tags:
+      Rank: "8"
+      Labeled: MEDICAL / HEALTH STATUS / HEALTH HISTORY
+Relationships:
+  associated_with:
+    Mul: one_to_one
+    Ends:
+      - Src: data_collection_category_grouping
+        Dst: data_collection_category
+    Props: null
