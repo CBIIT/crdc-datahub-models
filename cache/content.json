@@ -672,7 +672,7 @@
     ],
     "readme-file": "README.md",
     "release-notes": "",
-    "loading-file": "ccdi_fake_data_example_load_files.zip",
+    "loading-file": "ccdi_v2.0.0_fake_data_example_load_files.zip",
     "model-navigator-config": {
       "pageTitle": "CCDI Data Model",
       "pdfConfig": {
