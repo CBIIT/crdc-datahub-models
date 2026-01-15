@@ -221,6 +221,7 @@
     "readme-file": "Data_Model_Navigator_README.md",
     "loading-file": "ICDC_Example_Files.zip",
     "release-notes": "version.md",
+    "model-navigator-logo": "navigator-icon.svg",
     "model-navigator-config": {
       "pageTitle": "ICDC Data Model",
       "pdfConfig": {
@@ -236,7 +237,7 @@
         "study": "study",
         "case": "case",
         "biospecimen": "biospecimen",
-        "clinical_trial": "clinical_trial",
+        "clinical_trial": "clinical_trial_canine",
         "clinical": "clinical",
         "analysis": "analysis",
         "data_file": "data_file"
@@ -439,6 +440,7 @@
     "readme-file": "README.md",
     "release-notes": "version-history.md",
     "loading-file": "CTDC_Example_Files.zip",
+    "model-navigator-logo": "logo.png",
     "model-navigator-config": {
       "pageTitle": "CTDC Data Model",
       "pdfConfig": {
@@ -673,6 +675,7 @@
     "readme-file": "README.md",
     "release-notes": "",
     "loading-file": "ccdi_v2.0.0_fake_data_example_load_files.zip",
+    "model-navigator-logo": "CCDI-navigator-icon.png",
     "model-navigator-config": {
       "pageTitle": "CCDI Data Model",
       "pdfConfig": {
