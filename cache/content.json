@@ -5,7 +5,6 @@
       "cds-model-props.yml"
     ],
     "readme-file": "README.md",
-    "release-notes": "version-history.md",
     "loading-file": "cds-file-examples.zip",
     "model-navigator-logo": "navigator-icon.png",
     "model-navigator-config": {
@@ -441,7 +440,6 @@
       "ctdc_model_properties_file.yaml"
     ],
     "readme-file": "README.md",
-    "release-notes": "version-history.md",
     "loading-file": "CTDC_Example_Files.zip",
     "model-navigator-logo": "logo.png",
     "model-navigator-config": {
