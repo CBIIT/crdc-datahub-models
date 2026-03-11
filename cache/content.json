@@ -645,8 +645,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "1.22.1",
+    "current-version": "1.22.2",
     "versions": [
+      "1.22.2",
       "1.22.1",
       "1.22.0",
       "1.21.0",
