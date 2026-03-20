@@ -920,7 +920,7 @@
       "popsci-model-props.yml"
     ],
     "readme-file": "README.md",
-    "release-notes": "",
+    "release-notes": "version.md",
     "loading-file": "",
     "model-navigator-config": {
       "pageTitle": "PSDC Data Model",
