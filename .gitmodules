@@ -15,6 +15,6 @@
 	url = https://github.com/CBIIT/ccdi-model.git
 	branch = main
 [submodule "popsci-model"]
-	path = popsci-model
+	path = psdc-model
 	url = https://github.com/CBIIT/popsci-model
 	branch = Develop
