@@ -1031,7 +1031,7 @@ PropDefinitions:
     Type: string
     Req: 'Yes'
   data_file_type:
-    Desc: <The type of information contained in an electronic record.> A curated indicator as to the type of content represented by the data file.
+    Desc: <The type of information contained in an electronic record.> A curated indicator as to the type of content represented by the data file. <br>CDE ID = 14824731
     # Term:
     #   - Origin: caDSR
     #     Code: '14824731'
@@ -1160,7 +1160,7 @@ PropDefinitions:
     Type: string
     Req: 'Yes'
   data_file_access_control:
-    Desc: An indicator as to the level of access control to which a data file is subject.
+    Desc: An indicator as to the level of access control to which a data file is subject. <br>CDE ID = 11555664
     # Term:
     #   - Origin: caDSR
     #     Code: '11555664'
