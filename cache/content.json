@@ -919,7 +919,7 @@
       "popsci-model-props.yml"
     ],
     "readme-file": "README.md",
-    "release-notes": "",
+    "release-notes": "version.md",
     "loading-file": "",
     "model-navigator-config": {
       "pageTitle": "PSDC Data Model",
@@ -939,7 +939,7 @@
         "clinical_trial": "clinical_trial",
         "clinical": "clinical",
         "analysis": "analysis",
-        "file": "data_file"
+        "data_file": "data_file"
       },
       "facetFilterSearchData": [
         {
