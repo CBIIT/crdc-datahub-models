@@ -553,6 +553,7 @@ Relationships:
         Dst: study
       - Src: sample
         Dst: study
+        Req: true
       - Src: Protocol
         Dst: study
   of_consent_group:
@@ -569,6 +570,7 @@ Relationships:
         Dst: participant
       - Src: sample
         Dst: participant
+        Req: true
       - Src: file
         Dst: participant
         Mul: many_to_many
@@ -580,6 +582,7 @@ Relationships:
     Ends:
       - Src: sample
         Dst: pdx
+        Req: true
   from_sample:
     Props: null
     Mul: many_to_many
