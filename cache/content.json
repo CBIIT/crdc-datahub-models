@@ -1132,8 +1132,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "1.0.0",
+    "current-version": "2.0.0",
     "versions": [
+      "2.0.0",
       "1.0.0"
     ]
   },
