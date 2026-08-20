@@ -647,8 +647,9 @@
         "studyName": "study_name"
       }
     },
-    "current-version": "3.2.0",
+    "current-version": "3.3.0",
     "versions": [
+      "3.3.0",
       "3.2.0",
       "3.1.0",
       "3.0.0",
