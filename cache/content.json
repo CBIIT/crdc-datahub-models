@@ -177,7 +177,8 @@
       },
       "property-names": {
         "programName": "program_name",
-        "studyName": "study_name"
+        "studyName": "study_name",
+        "dbGaPID": "phs_accession"
       }
     },
     "current-version": "12.0.0",
@@ -425,7 +426,8 @@
       },
       "property-names": {
         "programName": "program_name",
-        "studyName": "clinical_study_name"
+        "studyName": "clinical_study_name",
+        "dbGaPID": "study_accession"
       }
     },
     "current-version": "2.1.0",
@@ -643,7 +645,8 @@
       },
       "property-names": {
         "programName": "program_name",
-        "studyName": "study_name"
+        "studyName": "study_name",
+        "dbGaPID": "study_accession"
       }
     },
     "current-version": "3.3.0",
@@ -1129,7 +1132,8 @@
       },
       "property-names": {
         "programName": "program_name",
-        "studyName": "study_name"
+        "studyName": "study_name",
+        "dbGaPID": "dbgap_accession_id"
       }
     },
     "current-version": "2.0.0",
