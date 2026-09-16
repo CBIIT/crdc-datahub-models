@@ -186,7 +186,7 @@
         "program_full_description": "ProgramDescription",
         "study_name": "studyName",
         "study_acronym": "studyAcronym",
-        "study_description": "studyDescription",
+        "study_description": "studyDescription"
       }
     },
     "current-version": "12.0.0",
@@ -443,7 +443,7 @@
         "program_full_description": "ProgramDescription",
         "clinical_study_name": "studyName",
         "study_acronym": "clinical_study_designation",
-        "clinical_study_description": "studyDescription",
+        "clinical_study_description": "studyDescription"
       }
     },
     "current-version": "2.1.0",
@@ -671,7 +671,7 @@
         "program_full_description": "ProgramDescription",
         "study_name": "studyName",
         "study_short_name": "studyAcronym",
-        "study_description": "studyDescription",
+        "study_description": "studyDescription"
       }
     },
     "current-version": "3.8.0",
@@ -1171,7 +1171,7 @@
         "program_short_name": "ProgramAcronym",
         "study_name": "studyName",
         "study_short_name": "studyAcronym",
-        "study_description": "studyDescription",
+        "study_description": "studyDescription"
       }
     },
     "current-version": "2.0.0",
