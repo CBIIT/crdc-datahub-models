@@ -649,8 +649,9 @@
         "dbGaPID": "study_accession"
       }
     },
-    "current-version": "3.8.0",
+    "current-version": "3.9.0",
     "versions": [
+      "3.9.0",
       "3.8.0",
       "3.7.0",
       "3.6.0",
