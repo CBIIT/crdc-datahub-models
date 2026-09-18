@@ -180,8 +180,9 @@
         "dbGaPID": "phs_accession"
       }
     },
-    "current-version": "12.0.0",
+    "current-version": "13.0.0",
     "versions": [
+      "13.0.0",
       "12.0.0",
       "11.0.4",
       "11.0.3",
