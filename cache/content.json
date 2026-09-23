@@ -179,6 +179,14 @@
         "programName": "program_name",
         "studyName": "study_name",
         "dbGaPID": "phs_accession"
+      },
+      "system-populated-props": {
+        "program_name": "ProgramName",
+        "program_acronym": "ProgramAcronym",
+        "program_full_description": "ProgramDescription",
+        "study_name": "StudyName",
+        "study_acronym": "StudyAcronym",
+        "study_description": "StudyDescription"
       }
     },
     "current-version": "13.0.0",
@@ -429,6 +437,14 @@
         "programName": "program_name",
         "studyName": "clinical_study_name",
         "dbGaPID": "study_accession"
+      },
+      "system-populated-props": {
+        "program_name": "ProgramName",
+        "program_acronym": "ProgramAcronym",
+        "program_full_description": "ProgramDescription",
+        "clinical_study_name": "StudyName",
+        "clinical_study_designation": "StudyAcronym",
+        "clinical_study_description": "StudyDescription"
       }
     },
     "current-version": "2.1.0",
@@ -648,6 +664,14 @@
         "programName": "program_name",
         "studyName": "study_name",
         "dbGaPID": "study_accession"
+      },
+      "system-populated-props": {
+        "program_name": "ProgramName",
+        "program_short_name": "ProgramAcronym",
+        "program_full_description": "ProgramDescription",
+        "study_name": "StudyName",
+        "study_short_name": "StudyAcronym",
+        "study_description": "StudyDescription"
       }
     },
     "current-version": "3.9.0",
@@ -1142,6 +1166,13 @@
         "programName": "program_name",
         "studyName": "study_name",
         "dbGaPID": "dbgap_accession_id"
+      },
+      "system-populated-props": {
+        "program_name": "ProgramName",
+        "program_short_name": "ProgramAcronym",
+        "study_name": "StudyName",
+        "study_short_name": "StudyAcronym",
+        "study_description": "StudyDescription"
       }
     },
     "current-version": "2.0.0",
