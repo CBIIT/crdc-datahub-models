@@ -1,0 +1,213 @@
+Handle: SDM
+Version: 0.0.2
+Nodes:
+  biospecimen:
+    Tags:
+      Category: Biospecimen
+    Props:
+    - acquisition_method_other_specify
+    - age_in_days_at_sectioning
+    - age_in_days_specimen_collection
+    - age_in_days_specimen_processing
+    - analyte_type
+    - clinical_biospec_type
+    - degree_dysplasia
+    - dis_code_ICD-10
+    - fixation_duration_minutes
+    - longest_dim
+    - perc_necrosis
+    - perc_normal_cells
+    - perc_tumor_cells
+    - perc_tumor_nuclei
+    - preservation_medium
+    - preservation_method
+    - preservation_method_temperature
+    - processing_location
+    - sample_description
+    - sample_tumor_status
+    - sample_type_OBIB
+    - section_number_in_seq
+    - section_thickness_value
+    - shipping_condition_type
+    - shortest_dim
+    - slicing_method
+    - slide_charge_type
+    - specimen_anatomic_site_Uberon
+    - specimen_cellular_architecture
+    - specimen_laterality
+    - specimen_procurement_method
+    - timepoint
+    - tissue_morph_ICD-O-3
+    - tissue_sample_type
+    - tumor_type
+  case:
+    Props: null
+  demographics:
+    Tags:
+      Category: Subject
+    Props:
+    - age_90_or_over
+    - birth_year
+    - ethnic_group
+    - race
+    - sex
+  diagnosis:
+    Tags:
+      Category: Visit
+    Props:
+    - age_in_days_at_diagnosis
+    - age_in_days_last_known_disease_status
+    - ajcc_stage
+    - last_known_disease_status
+    - metastasis_at_diagnosis
+    - metastatic_stage_clinical_m
+    - method_of_diagnosis
+    - primary_diagnosis_ncit
+    - primary_site_uberon
+    - regional_lymph_stage_clinical_n
+    - tissue_or_organ_of_origin_ICD-O
+    - tumor_classification
+    - tumor_grade
+    - tumor_stage_clinical_t
+  exposure:
+    Tags:
+      Category: Visit
+    Props:
+    - alc_history_indicator
+    - env_exposure
+    - env_exposure_type
+    - pack_years_smoked
+    - smoking_hiostory
+    - years_smoked
+  family history:
+    Tags:
+      Category: Subject
+    Props:
+    - family_member_cancer_diagnosis
+    - family_member_cancer_diagnosis_count
+  followup:
+    Props: null
+  imaging:
+    Props: null
+  na:
+    Props: null
+  occurrence:
+    Tags:
+      Category: Visit
+    Props:
+    - age_in_days_last_known_survival_status
+    - occurrence_type
+  participant:
+    Tags:
+      Category: Subject
+    Props:
+    - dbgap_subject_id
+    - ncbi_tax_id
+    - particpant_id
+  personnel:
+    Tags:
+      Category: Administrative
+    Props:
+    - pers_degree_suffix
+    - pers_email
+    - pers_family_name
+    - pers_first_name
+    - pers_institution
+    - pers_middle_name
+    - pers_orcid
+    - pers_prefix_name
+    - pers_role
+    - pers_suffix_name
+  program:
+    Tags:
+      Category: Administrative
+    Props:
+    - prg_external_url
+    - prg_full_description
+    - prg_name
+    - prg_short_description
+    - prg_short_name
+  publication:
+    Tags:
+      Category: Study
+    Props:
+    - DOI_or_Pub_ID
+    - DOI_relationship_type
+    - Publication_Status
+    - Publication_Title
+    - Publication_Type
+    - authorship
+    - citation
+    - resource_identifier
+    - url
+    - year_of_publication
+  study:
+    Tags:
+      Category: Administrative
+    Props:
+    - adult_or_pediatric_ya_study
+    - biospecimen_collection
+    - data_access_level
+    - dbgap_accession
+    - enrollment_beginning_year
+    - enrollment_ending_year
+    - funding_agency
+    - grant_number
+    - iacuc_approval_date
+    - license_type
+    - study_beginning_year
+    - study_description
+    - study_ending_year
+    - study_external_url
+    - study_name
+    - study_organism
+    - study_short_name
+    - study_status
+    - study_type
+  treatment:
+    Tags:
+      Category: Visit
+    Props:
+    - age_in_days_treatment_end
+    - age_in_days_treatment_start
+    - initial_disease_status
+    - number_of_cycles
+    - off_treatment_reason
+    - pharmacotherapy_type
+    - response
+    - therapeutic_agents
+    - treatment_anatomic_site_Uberon
+    - treatment_intent_type
+    - treatment_type
+  vitals:
+    Tags:
+      Category: Visit
+    Props:
+    - ECOG_performance_assessment
+    - Karnofsky_performance_status
+    - age_in_days_at_death
+    - bmi
+    - bsa_unit_of_measure
+    - cause_of_death
+    - cause_of_death_source
+    - disease_response_criteria_system
+    - height
+    - height_unit_of_measure
+    - menopause_status
+    - prior_malignancy
+    - vital_status
+    - weight
+    - weight_unit_of_measure
+    - year_of_death
+Relationships:
+  of_study:
+    Mul: one_to_many
+    Desc: TBD
+    Props: null
+    Ends:
+    - Src: program
+      Dst: study
+      Props: null
+    - Src: study
+      Dst: study
+      Props: null
