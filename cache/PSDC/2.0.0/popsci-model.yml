@@ -18,15 +18,15 @@ Nodes:
   #     - property_4
   #     - property_5
   program:  
-    Desc: The Program node contains properties which describe any broad framework and/or administrative umbrella into which inter-related projects, and/or studies/trials and/or other research activities can be grouped, based upon their origins and/or scientific focus. These programs may or may not directly relate to any formal program, e.g. NCI funding programs. Example - Clinical Proteomic Tumor Analysis.
+    Desc: The Program node contains properties which describe any broad framework and/or administrative umbrella into which inter-related projects, and/or studies/trials and/or other research activities can be grouped, based upon their origins and/or scientific focus. These programs may or may not directly relate to any formal program, e.g. NCI funding programs.
     Tags:
       Category: administrative
       Assignment: core
       Class: primary
       Template: 'Yes'
     Props:
-      - program_name #11444542
-      - program_short_name #11459801
+      - program_name #11444542 now showing as RETRIRED ARCIVED
+      - program_short_name #11459801 now showing as RETRIRED ARCIVED
   # project:
   #   Desc: text <WORK NEEDED HERE>
   #   Tags:
@@ -38,7 +38,7 @@ Nodes:
   #     - project_name #11459804
   #     - project_short_name #11459806
   study:
-    Desc: The Study node contains properties required to characterize each study in terms of a title, describe when, how and why the study/trial was conducted, and indicate the total number of participants included in the study in question.
+    Desc: The Study node contains the properties required to characterize each study in terms of a title, and to describe when, how and why the study/trial was conducted.
     Tags:
       Category: study
       Assignment: core
@@ -98,7 +98,7 @@ Nodes:
       - digital_object_id # per CTDC, CDE ID = 15915370
       - pubmed_id # per CTDC, CDE ID = 15915377
   study_country:
-    Desc: The Study Country node contains only a single property via which potentially lengthy lists of countries from which study participants were included can be associated with the study in question, using data loading files of minimal complexity.
+    Desc: The Study Country node contains only two properties via which potentially lengthy lists of countries from which study participants were included can be associated with the study in question, using data loading files of absolutely minimal complexity.
     Tags:
       Category: study
       Assignment: core
@@ -108,7 +108,7 @@ Nodes:
       - study_country_record_id # CDE ID = 14822135
       - study_country # CDE ID = 16990793
   study_state_province_territory:
-    Desc: The Study State/Province/Territory node contains only a single property via which potentially lengthy lists of states and/or provinces and/or territories from which study participants were included can be associated with the study in question, using data loading files of minimal complexity.
+    Desc: The Study State/Province/Territory node contains only two properties via which potentially lengthy lists of states and/or provinces and/or territories from which study participants were included can be associated with the study in question, using data loading files of absolutely minimal complexity.
     Tags:
       Category: study
       Assignment: core
@@ -118,7 +118,7 @@ Nodes:
       - study_state_record_id # CDE ID = 14822135
       - study_state_province_territory # CDE ID = 16990818
   data_collection:
-    Desc: The Data Collection node is comprised of the properties required to describe the nature of the data being gathered by any given study, and to define the extent to which each data collection category was covered.
+    Desc: The Data Collection node is comprised of the properties required to illustrate the nature of the data being gathered by any given study.
     Tags:
       Category: study
       Assignment: core
@@ -127,10 +127,10 @@ Nodes:
     Props:  
       - data_collection_record_id # CDE ID = 14822135
       - data_collection_category # for example Mental Health Assessments, Cardiovascular Health Assessments, Smoking History, etc., all per CV # CDE ID = 16990979
-      #- data_collection_category_annotation_count # the number of annotations per data collection category # CDE ID = 16991477 but property deprecated, and superseded by data_collection_category_assessed as noted below
-      - data_collection_category_assessed  # CDE ID = 16991478 and this property supersedes the current data_collection_category_annotation_count as noted above
+      #- data_collection_category_annotation_count # the number of annotations per data collection category # CDE ID = 16991477 This property has been superseded by the data_collection_category_assessed property as noted below
+      - data_collection_category_assessed  # CDE ID = 16991478 and this property supersedes the prior data_collection_category_annotation_count property as noted above
   participant:
-    Desc: The Participant node is comprised of the properties which define and characterize each study participant
+    Desc: The Participant node is comprised of the properties which define and characterize each study participant.
     Tags:
       Category: case
       Assignment: core
@@ -186,7 +186,7 @@ Relationships:
       - Src: study # so can a lowest-level study belong directly to a highest-level program?
         Dst: program   
     Props: null
-  associated_with: # group all file relationships in here?
+  associated_with:
     Mul: many_to_one
     Ends:
       - Src: file

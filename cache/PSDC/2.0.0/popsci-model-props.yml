@@ -76,11 +76,11 @@ PropDefinitions:
   #         Labeled: Program 
   # program properties
   program_name:
-    Desc: <The narrative title used to refer to a broad framework (an administrative umbrella) of goals under which related projects or other research activities are grouped. Example - Clinical Proteomic Tumor Analysis.>
+    Desc: <The narrative title used to refer to a broad framework (an administrative umbrella) of goals under which related projects or other research activities are grouped.> # Example - Clinical Proteomic Tumor Analysis.
     Term:
       - Origin: caDSR
         Code: '11444542'
-        Value: Program Name Text 
+        Value: Program Name Text #THIS NEEDS TO BE UPDATED - should have been "Research Activity Program Name Text" But this CDE is now showing as RETIRED ARCHIVED, having been superseded by what?
         Version: '3'
         Tags:
           Provenance: CRDC
@@ -88,11 +88,11 @@ PropDefinitions:
     Type: string
     Req: 'Yes'
   program_short_name:
-    Desc: <An acronym or abbreviated form of the title of a broad framework of goals under which related projects or other research activities are grouped. For example, CPTAC.> <br>This property is used as the key via which child records, e.g. project and/or study/trial records, can be associated with the appropriate program during data loading, and to identify the correct records during data updates.
+    Desc: <An acronym or abbreviated form of the title of a broad framework of goals under which related projects or other research activities are grouped.> <br>This property is used as the key via which child records, e.g. project and/or study/trial records, can be associated with the appropriate program during data loading, and to identify the correct records during data updates. # Removed the CPTAC example
     Term:
       - Origin: caDSR
         Code: '11459801'
-        Value: Program Short Name Text
+        Value: Program Short Name Text # This also RETIRED ARCHIVED, having been superseded by what?
         Version: '3'
         Tags:
           Provenance: CRDC
@@ -225,9 +225,9 @@ PropDefinitions:
           Labeled: Status
     Src: Data Submitter(s)
     Enum: # Acceptable values listed here are the actual values propsed by the working group
-      - Active # Data collection still in progress; CDE uses "Active Study" as its permissible value
-      - Closed # Data collection completed, data analysis in progress; CDE uses "Completed Study" as its permissible value
-      # CDE also has "Provisional Study" as a permissible value
+      - Active Study # Data collection still in progress; CDE uses "Active Study" as its permissible value
+      - Completed Study # Data collection completed, data analysis in progress; CDE uses "Completed Study" as its permissible value
+      - Provisional Study # CDE also has "Provisional Study" as a permissible value
     Req: Preferred
   enrollment_beginning_year:
     Desc: <The year in which the study began enrolling participants.>
@@ -360,14 +360,14 @@ PropDefinitions:
     Req: 'Yes'
   person_role:
     Desc: <The text that describes the distinguishable characteristics of the action or activity assigned to or required or expected of a person in a formal association with a group or organization.> An indicator as to the role(s) and/or responsibilities of each individual responsible for or directly involved in the conduct and/or analysis of the clinical trial or research project. Each such individual must have at least one specified role, but any given individual may be assigned multiple roles for the study in question. Within the data loading file, multiple roles assigned to a single individual must be separated from one another using the pipe (|) character.
-    Term:
-      - Origin: caDSR 
-        Code: '2201713'
-        Value: Person Affiliation Role Text Type
-        Version: '2'
-        Tags:
-          Provenance: NCI Standard
-          Labeled: Position or Role
+    # Term: # NEED TO TEMPORARILY COMMENT THIS CDE REFERENCE OUT - WE ONLY WANT TO ALLOW THE SUBSET OF VALUES SPECIFIED BELOW
+    #   - Origin: caDSR 
+    #     Code: '2201713'
+    #     Value: Person Affiliation Role Text Type
+    #     Version: '2'
+    #     Tags:
+    #       Provenance: NCI Standard
+    #       Labeled: Position or Role
     Src: Data Submitter(s)
     Type:
       value_type: list
@@ -394,7 +394,9 @@ PropDefinitions:
         - Study Chair
         - Study Chairperson
         - Study Coordinator
-    Req: 'Yes'  
+    Req: 'Yes'
+    Tags:
+      Labeled: Position or Role
   # associated_link properties
   associated_link_record_id:  
     Desc: <A unique sequence of characters used to identify a linkage between related records.> A unique identifier of each associated link record, used to identify the appropriate associated link record(s) during data loading and/or record modification. The value of this record ID also dictates the order in which associated links are listed within the application's UI.
@@ -1048,7 +1050,6 @@ PropDefinitions:
       - Investigator Report
       - Questionnaire
       - Survey
-      - More options to be added as needed
     Req: 'Yes'
     Tags:
       Labeled: File Type
