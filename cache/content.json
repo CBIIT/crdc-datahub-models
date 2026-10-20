@@ -448,8 +448,9 @@
         "clinical_study_description": "StudyDescription"
       }
     },
-    "current-version": "2.1.0",
+    "current-version": "9.9.9",
     "versions": [
+      "9.9.9"
       "2.1.0",
       "2.0.0",
       "1.3.0",
