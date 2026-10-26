@@ -1,5 +1,6 @@
 {
   "CDS": {
+    "display-name": "GC",
     "model-files": [
       "cds-model.yml",
       "cds-model-props.yml"
@@ -229,6 +230,7 @@
     ]
   },
   "ICDC": {
+    "display-name": "ICDC",
     "model-files": [
       "icdc-model.yml",
       "icdc-model-props.yml"
@@ -459,6 +461,7 @@
     ]
   },
   "CTDC": {
+    "display-name": "CTDC",
     "model-files": [
       "ctdc_model_file.yaml",
       "ctdc_model_properties_file.yaml"
@@ -725,6 +728,8 @@
     ]
   },
   "CCDI": {
+    "display-name": "CCDI",
+    "isHidden": true,
     "model-files": [
       "ccdi-model.yml",
       "ccdi-model-props.yml"
@@ -966,6 +971,7 @@
     ]
   },
   "PSDC": {
+    "display-name": "PSDC",
     "model-files": [
       "popsci-model.yml",
       "popsci-model-props.yml"
@@ -1188,6 +1194,7 @@
     ]
   },
   "SDM": {
+    "display-name": "SDM",
     "model-files": [
       "crdc-submission-model.yml",
       "crdc-submission-model-properties.yml"
@@ -1409,6 +1416,8 @@
     ]
   },
   "Test MDF": {
+    "display-name": "Test MDF",
+    "isHidden": true,
     "model-files": [
       "crdc_datahub_mdf.yml"
     ],
@@ -1577,6 +1586,8 @@
     ]
   },
   "Hidden Model": {
+    "display-name": "Hidden Model",
+    "isHidden": true,
     "model-files": [
       "hidden_model_mdf.yml"
     ],
