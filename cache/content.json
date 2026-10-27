@@ -1190,7 +1190,7 @@
   "SDM": {
     "model-files": [
       "crdc-submission-model.yml",
-      "crdc-submission-model-props.yml"
+      "crdc-submission-model-properties.yml"
     ],
     "readme-file": "",
     "release-notes": "",
