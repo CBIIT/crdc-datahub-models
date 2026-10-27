@@ -1,5 +1,6 @@
 {
   "CDS": {
+    "order": 1,
     "display-name": "GC",
     "model-files": [
       "cds-model.yml",
@@ -230,6 +231,7 @@
     ]
   },
   "ICDC": {
+    "order": 4,
     "display-name": "ICDC",
     "model-files": [
       "icdc-model.yml",
@@ -461,6 +463,7 @@
     ]
   },
   "CTDC": {
+    "order": 3,
     "display-name": "CTDC",
     "model-files": [
       "ctdc_model_file.yaml",
@@ -729,6 +732,7 @@
     ]
   },
   "CCDI": {
+    "order": 2,
     "display-name": "CCDI",
     "isHidden": true,
     "model-files": [
@@ -972,6 +976,7 @@
     ]
   },
   "PSDC": {
+    "order": 5,
     "display-name": "PSDC",
     "model-files": [
       "popsci-model.yml",
@@ -1195,6 +1200,7 @@
     ]
   },
   "SDM": {
+    "order": 6,
     "display-name": "SDM",
     "model-files": [
       "crdc-submission-model.yml",
@@ -1417,6 +1423,7 @@
     ]
   },
   "Test MDF": {
+    "order": 98,
     "display-name": "Test MDF",
     "isHidden": true,
     "model-files": [
@@ -1587,6 +1594,7 @@
     ]
   },
   "Hidden Model": {
+    "order": 99,
     "display-name": "Hidden Model",
     "isHidden": true,
     "model-files": [
