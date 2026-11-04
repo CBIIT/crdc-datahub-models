@@ -675,8 +675,9 @@
         "study_description": "StudyDescription"
       }
     },
-    "current-version": "4.1.0",
+    "current-version": "4.1.1",
     "versions": [
+      "4.1.1",
       "4.1.0",
       "4.0.0",
       "3.10.0",
