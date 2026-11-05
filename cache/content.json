@@ -1403,8 +1403,9 @@
         "study_description": "StudyDescription"
       }
     },
-    "current-version": "0.0.2",
+    "current-version": "0.0.3",
     "versions": [
+      "0.0.3",
       "0.0.2"
     ]
   },
