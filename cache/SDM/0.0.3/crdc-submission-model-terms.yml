@@ -1,0 +1,569 @@
+Terms:
+  DOI_or_Pub_ID:
+    Value: Publication Digital Object Identifier Text
+    Origin: caDSR
+    Version: '1'
+    Code: '15915370'
+  DOI_relationship_type:
+    Value: Publication DOI Relationship Type
+    Origin: caDSR
+    Version: '1'
+    Code: '17090347'
+  ECOG_performance_assessment:
+    Value: Performance Status ECOG Scale
+    Origin: caDSR
+    Version: '5.1'
+    Code: '88'
+  Karnofsky_performance_status:
+    Value: Karnofsky Performance Status Score
+    Origin: caDSR
+    Version: '4.2'
+    Code: '2003853'
+  Publication_Status:
+    Value: Publication Document Status
+    Origin: caDSR
+    Version: '1'
+    Code: '16698384'
+  Publication_Title:
+    Value: Publication Title Text
+    Origin: caDSR
+    Version: '1'
+    Code: '16078531'
+  Publication_Type:
+    Value: Publication Document Type
+    Origin: caDSR
+    Version: '1'
+    Code: '16698383'
+  adult_or_pediatric_ya_study:
+    Value: Study Administration Legal Adult Or Pediatric Study Type
+    Origin: caDSR
+    Version: '3'
+    Code: '11524549'
+  age_90_or_over:
+    Value: Person Age 90 or Over Indicator
+    Origin: caDSR
+    Version: '1'
+    Code: '15354920'
+  age_in_days_at_death:
+    Value: Subject Age in Days at Death Count
+    Origin: caDSR
+    Version: '1'
+    Code: '15748633'
+  age_in_days_at_diagnosis:
+    Value: Subject Age in Days at Diagnosis Count
+    Origin: caDSR
+    Version: '1'
+    Code: '15019300'
+  age_in_days_last_known_disease_status:
+    Value: Subject Age in Days at Last Known Disease Status Count
+    Origin: caDSR
+    Version: '1'
+    Code: '14589579'
+  age_in_days_last_known_survival_status:
+    Value: Subject Age in Days at Last Known Survival Status Count
+    Origin: caDSR
+    Version: '1'
+    Code: '12305768'
+  age_in_days_specimen_collection:
+    Value: Subject Age in Days at Specimen Collection Count
+    Origin: caDSR
+    Version: '2'
+    Code: '14473376'
+  age_in_days_specimen_processing:
+    Value: Subject Age in Days to Specimen Processing Count
+    Origin: caDSR
+    Version: '1'
+    Code: '16323601'
+  age_in_days_treatment_end:
+    Value: Subject Age in Days at Treatment End Count
+    Origin: caDSR
+    Version: '1'
+    Code: '12304723'
+  age_in_days_treatment_start:
+    Value: Subject Age in Days at Treatment Start Count
+    Origin: caDSR
+    Version: '1'
+    Code: '12304720'
+  ajcc_stage:
+    Value: American Joint Committee on Cancer Publication Version Type
+    Origin: caDSR
+    Version: '1'
+    Code: '2722309'
+  alc_history_indicator:
+    Value: Alcohol History Indicator
+    Origin: caDSR
+    Version: '1'
+    Code: '7537144'
+  analyte_type:
+    Value: Specimen Analyte Type
+    Origin: caDSR
+    Version: '1'
+    Code: '15063661'
+  authorship:
+    Value: Publication Citation Author List Text
+    Origin: caDSR
+    Version: '1'
+    Code: '16081468'
+  biospecimen_collection:
+    Value: Research Activity Biospecimen Collection Indicator
+    Origin: caDSR
+    Version: '1'
+    Code: '16979768'
+  birth_year:
+    Value: Subject Birth Year Date
+    Origin: caDSR
+    Version: '1'
+    Code: '16032218'
+  bmi:
+    Value: Person Body Mass Index Value
+    Origin: caDSR
+    Version: '3'
+    Code: '2006410'
+  bsa_unit_of_measure:
+    Value: Subject Body Surface Area UCUM Code
+    Origin: caDSR
+    Version: '1'
+    Code: '15114329'
+  cause_of_death:
+    Value: Primary Cause of Death Reason
+    Origin: caDSR
+    Version: '1'
+    Code: '4783274'
+  cause_of_death_source:
+    Value: Patient Death Source Information Text Name
+    Origin: caDSR
+    Version: '1'
+    Code: '2390921'
+  citation:
+    Value: Publication Journal Citation Text
+    Origin: caDSR
+    Version: '1'
+    Code: '16081476'
+  dbgap_accession:
+    Value: Research Activity dbGaP Accession Number Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '11524544'
+  dbgap_subject_id:
+    Value: Research Activity dbGaP Subject Identifier Text
+    Origin: caDSR
+    Version: '1'
+    Code: '14940691'
+  dis_code_ICD-10:
+    Value: Diagnosis Disease ICD-10-CM Code
+    Origin: caDSR
+    Version: '1'
+    Code: '11479873'
+  disease_response_criteria_system:
+    Value: Disease Response System Criteria Type
+    Origin: caDSR
+    Version: '1'
+    Code: '13381490'
+  enrollment_beginning_year:
+    Value: Research Activity Study Enrollment Start Year Date
+    Origin: caDSR
+    Version: '1'
+    Code: '16979766'
+  enrollment_ending_year:
+    Value: Research Activity Study Enrollment End Year Date
+    Origin: caDSR
+    Version: '1'
+    Code: '16979767'
+  env_exposure:
+    Value: Subject Environmental Exposure Indicator
+    Origin: caDSR
+    Version: '1'
+    Code: '15753166'
+  env_exposure_type:
+    Value: Subject Environmental Exposure Type
+    Origin: caDSR
+    Version: '1'
+    Code: '15753203'
+  ethnic_group:
+    Value: Ethnic Group Category Text
+    Origin: caDSR
+    Version: '2'
+    Code: '2192217'
+  funding_agency:
+    Value: Study Administration Funding Agency Organization Name
+    Origin: caDSR
+    Version: '1'
+    Code: '16002760'
+  grant_number:
+    Value: Study Administration Grant Funding Number Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '16002823'
+  height:
+    Value: Person Height Value
+    Origin: caDSR
+    Version: '4'
+    Code: '2179643'
+  height_unit_of_measure:
+    Value: Person Height Unit of Measure Unified Code for Units of Measure Code
+    Origin: caDSR
+    Version: '1'
+    Code: '2538920'
+  iacuc_approval_date:
+    Value: Study Administration IACUC Approval Date
+    Origin: caDSR
+    Version: '1'
+    Code: '17545139'
+  initial_disease_status:
+    Value: Treatment Initial Disease Status
+    Origin: caDSR
+    Version: '1'
+    Code: '15907348'
+  last_known_disease_status:
+    Value: Subject Last Known Disease Status
+    Origin: caDSR
+    Version: '1'
+    Code: '12447172'
+  license_type:
+    Value: Data File Dataset License Type
+    Origin: caDSR
+    Version: '1'
+    Code: '14902606'
+  menopause_status:
+    Value: Patient Menopause Status
+    Origin: caDSR
+    Version: '1.1'
+    Code: '2434914'
+  metastasis_at_diagnosis:
+    Value: Metastasis At Diagnosis Assessment Status
+    Origin: caDSR
+    Version: '1'
+    Code: '3438571'
+  metastatic_stage_clinical_m:
+    Value: Neoplasm American Joint Committee on Cancer Clinical Distant Metastasis
+      M Stage
+    Origin: caDSR
+    Version: '1'
+    Code: '3440331'
+  method_of_diagnosis:
+    Value: Disease Diagnostic Method Type
+    Origin: caDSR
+    Version: '1'
+    Code: '14857681'
+  ncbi_tax_id:
+    Value: Subject Taxonomy NCBI Identifier
+    Origin: caDSR
+    Version: '2'
+    Code: '10543100'
+  number_of_cycles:
+    Value: Therapeutic Procedure Cycle Administered Treatment Count
+    Origin: caDSR
+    Version: '1'
+    Code: '3060718'
+  off_treatment_reason:
+    Value: Subject Off Treatment Reason
+    Origin: caDSR
+    Version: '1'
+    Code: '15743249'
+  pack_years_smoked:
+    Value: Person Cigarette Smoking History Pack Year Value
+    Origin: caDSR
+    Version: '1'
+    Code: '2955385'
+  particpant_id:
+    Value: Subject Data Origin Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '12220014'
+  pers_degree_suffix:
+    Value: Person Academic Degree Suffix Abbreviation Text
+    Origin: caDSR
+    Version: '1'
+    Code: '2668478'
+  pers_email:
+    Value: Person Email Address Text
+    Origin: caDSR
+    Version: '1'
+    Code: '2517550'
+  pers_family_name:
+    Value: Person Family/Last Name
+    Origin: caDSR
+    Version: '2'
+    Code: '2179591'
+  pers_first_name:
+    Value: Person Given/First Name
+    Origin: caDSR
+    Version: '2'
+    Code: '2179589'
+  pers_middle_name:
+    Value: Person Middle Name
+    Origin: caDSR
+    Version: '2'
+    Code: '2179590'
+  pers_orcid:
+    Value: Person ORCID Text
+    Origin: caDSR
+    Version: '3'
+    Code: '10624734'
+  pers_prefix_name:
+    Value: Person Name Prefix Abbreviation Text
+    Origin: caDSR
+    Version: '1'
+    Code: '2663165'
+  pers_role:
+    Value: Person Affiliation Role Text Type
+    Origin: caDSR
+    Version: '2'
+    Code: '2201713'
+  pers_suffix_name:
+    Value: Individual Genealogy Suffix Code
+    Origin: caDSR
+    Version: '2'
+    Code: '2006475'
+  pharmacotherapy_type:
+    Value: Subject Pharmacotherapy Type
+    Origin: caDSR
+    Version: '1'
+    Code: '15743233'
+  preservation_medium:
+    Value: Specimen Preservation Procedure Medium Type
+    Origin: caDSR
+    Version: '1'
+    Code: '16323957'
+  preservation_method:
+    Value: Specimen Preservation Procedure Type
+    Origin: caDSR
+    Version: '3'
+    Code: '8028962'
+  preservation_method_temperature:
+    Value: Specimen Preservation Procedure Temperature Text
+    Origin: caDSR
+    Version: '1'
+    Code: '16306751'
+  prg_external_url:
+    Value: Study Administration Program External URL Text
+    Origin: caDSR
+    Version: '1'
+    Code: '17087631'
+  prg_full_description:
+    Value: Study Administration Program Full Description Text
+    Origin: caDSR
+    Version: '1'
+    Code: '17087562'
+  prg_name:
+    Value: Study Administration Program Name
+    Origin: caDSR
+    Version: '1'
+    Code: '15846335'
+  prg_short_description:
+    Value: Study Administration Program Short Description Text
+    Origin: caDSR
+    Version: '1'
+    Code: '17087559'
+  prg_short_name:
+    Value: Study Administration Program Short Name
+    Origin: caDSR
+    Version: '1'
+    Code: '15846845'
+  primary_diagnosis_ncit:
+    Value: Disease Primary Diagnosis NCI Thesaurus Text
+    Origin: caDSR
+    Version: '1'
+    Code: '14905532'
+  primary_site_uberon:
+    Value: Disease Primary Site Uberon Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '14883047'
+  prior_malignancy:
+    Value: Subject Prior Malignancy Indicator
+    Origin: caDSR
+    Version: '1'
+    Code: '15998677'
+  race:
+    Value: Race Category Text
+    Origin: caDSR
+    Version: '1'
+    Code: '2192199'
+  regional_lymph_stage_clinical_n:
+    Value: Neoplasm American Joint Committee on Cancer Clinical Regional Lymph Node
+      N Stage
+    Origin: caDSR
+    Version: '1'
+    Code: '3440330'
+  resource_identifier:
+    Value: Research Activity Resource Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '14767247'
+  response:
+    Value: Disease Response Assessment Outcome
+    Origin: caDSR
+    Version: '1'
+    Code: '13383448'
+  sample_description:
+    Value: Sample Description Text
+    Origin: caDSR
+    Version: '3'
+    Code: '2003907'
+  sample_tumor_status:
+    Value: Specimen Source Location Category
+    Origin: caDSR
+    Version: '2'
+    Code: '14688604'
+  sample_type_OBIB:
+    Value: Specimen Material OBIB Source
+    Origin: caDSR
+    Version: '1'
+    Code: '11253427'
+  sex:
+    Value: Person Sex at Birth Category
+    Origin: caDSR
+    Version: '3'
+    Code: '7572817'
+  smoking_hiostory:
+    Value: Smoking History Status
+    Origin: caDSR
+    Version: '1'
+    Code: '3626148'
+  specimen_anatomic_site_Uberon:
+    Value: Specimen Original Anatomic Site Uberon Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '12083894'
+  specimen_laterality:
+    Value: Specimen Laterality Type
+    Origin: caDSR
+    Version: '2'
+    Code: '8028966'
+  specimen_procurement_method:
+    Value: Specimen Collection Method Type
+    Origin: caDSR
+    Version: '1'
+    Code: '15115495'
+  study_beginning_year:
+    Value: Study Administration Study Start Year Date
+    Origin: caDSR
+    Version: '1'
+    Code: '15607845'
+  study_description:
+    Value: Research Activity Study Description Text
+    Origin: caDSR
+    Version: '1'
+    Code: '16188024'
+  study_ending_year:
+    Value: Study Administration Study End Year Date
+    Origin: caDSR
+    Version: '1'
+    Code: '15607913'
+  study_external_url:
+    Value: Study Administration Program External URL Text
+    Origin: caDSR
+    Version: '1'
+    Code: '17087631'
+  study_name:
+    Value: Study Administration Study Name Text
+    Origin: caDSR
+    Version: '4'
+    Code: '11459810'
+  study_short_name:
+    Value: Study Administration Study Short Name Text
+    Origin: caDSR
+    Version: '4'
+    Code: '11459812'
+  study_status:
+    Value: Study Administration Study Status
+    Origin: caDSR
+    Version: '1'
+    Code: '15607838'
+  study_type:
+    Value: Study Primary Purpose Type
+    Origin: caDSR
+    Version: '1'
+    Code: '11160683'
+  therapeutic_agents:
+    Value: Therapeutic Procedure Pharmacologic Substance or Chemical NCI Thesaurus
+      Name
+    Origin: caDSR
+    Version: '1'
+    Code: '14913015'
+  timepoint:
+    Value: Biospecimen Collection Timepoint Text
+    Origin: caDSR
+    Version: '2'
+    Code: '8031077'
+  tissue_morph_ICD-O-3:
+    Value: Specimen Tumor Tissue ICD-O-3 Morphology Code
+    Origin: caDSR
+    Version: '1'
+    Code: '11326261'
+  tissue_or_organ_of_origin_ICD-O:
+    Value: ICD-O Origin of Disease Anatomic Site
+    Origin: caDSR
+    Version: '1'
+    Code: '6161035'
+  treatment_anatomic_site_Uberon:
+    Value: Therapeutic Procedure Anatomic Site Uberon Identifier
+    Origin: caDSR
+    Version: '1'
+    Code: '14461856'
+  treatment_intent_type:
+    Value: Treatment Intent Type
+    Origin: caDSR
+    Version: '2'
+    Code: '15157467'
+  treatment_type:
+    Value: Therapeutic Procedure Performed Type
+    Origin: caDSR
+    Version: '1'
+    Code: '14737565'
+  tumor_classification:
+    Value: Tumor Classification Category
+    Origin: caDSR
+    Version: '1'
+    Code: '12922545'
+  tumor_grade:
+    Value: Subject Tumor Grade
+    Origin: caDSR
+    Version: '2'
+    Code: '11325685'
+  tumor_stage_clinical_t:
+    Value: Neoplasm American Joint Committee on Cancer Clinical Primary Tumor T Stage
+    Origin: caDSR
+    Version: '1'
+    Code: '3440328'
+  tumor_type:
+    Value: Tumor Tissue Disease Description Type
+    Origin: caDSR
+    Version: '1'
+    Code: '3288124'
+  url:
+    Value: Publication Digital Object Identifier URL Text
+    Origin: caDSR
+    Version: '1'
+    Code: '16987483'
+  vital_status:
+    Value: Participant Vital Status Type
+    Origin: caDSR
+    Version: '1'
+    Code: '2847330'
+  weight:
+    Value: Person Weight Value
+    Origin: caDSR
+    Version: '4'
+    Code: '2179689'
+  weight_unit_of_measure:
+    Value: Person Weight Unit of Measure Unified Code for Units of Measure Code
+    Origin: caDSR
+    Version: '1'
+    Code: '2630200'
+  year_of_death:
+    Value: Subject Death Year Date
+    Origin: caDSR
+    Version: '2'
+    Code: '15112166'
+  year_of_publication:
+    Value: Publication Year Date
+    Origin: caDSR
+    Version: '1'
+    Code: '16081475'
+  years_smoked:
+    Value: Person Smoking Duration Year Count
+    Origin: caDSR
+    Version: '1'
+    Code: '3137957'
