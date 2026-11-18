@@ -1222,14 +1222,12 @@
         "landscape": true
       },
       "iconMap": {
-        "administrative": "administrative",
-        "study": "study",
-        "case": "case",
-        "biospecimen": "biospecimen",
-        "clinical_trial": "clinical_trial",
-        "clinical": "clinical",
-        "analysis": "analysis",
-        "data_file": "data_file"
+        "Administrative": "administrative",
+        "Study": "study",
+        "Biospecimen": "biospecimen",
+        "Subject": "participant",
+        "Visit": "clinical",
+        "Data_File": "data_file"
       },
       "facetFilterSearchData": [
         {
