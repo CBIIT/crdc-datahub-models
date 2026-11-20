@@ -1,0 +1,1388 @@
+PropDefinitions:
+  acquisition_method_other_specify:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_in_days_at_sectioning:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_in_days_specimen_collection:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Specimen Collection Count
+      Origin: CRDC
+      Version: '2'
+      Code: 14473376
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_in_days_specimen_processing:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days to Specimen Processing Count
+      Origin: CRDC
+      Version: '1'
+      Code: 16323601
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  analyte_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Analyte Type
+      Origin: CRDC
+      Version: '1'
+      Code: 15063661
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  clinical_biospec_type:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  degree_dysplasia:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  dis_code_ICD-10:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Diagnosis Disease ICD-10-CM Code
+      Origin: CRDC
+      Version: '1'
+      Code: 11479873
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  fixation_duration_minutes:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  longest_dim:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  perc_necrosis:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  perc_normal_cells:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  perc_tumor_cells:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  perc_tumor_nuclei:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  preservation_medium:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Preservation Procedure Medium Type
+      Origin: CRDC
+      Version: '1'
+      Code: 16323957
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  preservation_method:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Preservation Procedure Type
+      Origin: CRDC
+      Version: '3'
+      Code: 8028962
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  preservation_method_temperature:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Preservation Procedure Temperature Text
+      Origin: CRDC
+      Version: '1'
+      Code: 16306751
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  processing_location:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  sample_description:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Sample Description Text
+      Origin: CRDC
+      Version: '3'
+      Code: 2003907
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  sample_tumor_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Source Location Category
+      Origin: CRDC
+      Version: '2'
+      Code: 14688604
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  sample_type_OBIB:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Material OBIB Source
+      Origin: CRDC
+      Version: '1'
+      Code: 11253427
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  section_number_in_seq:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  section_thickness_value:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  shipping_condition_type:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  shortest_dim:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  slicing_method:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  slide_charge_type:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  specimen_anatomic_site_Uberon:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Original Anatomic Site Uberon Identifier
+      Origin: CRDC
+      Version: '1'
+      Code: 12083894
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  specimen_cellular_architecture:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  specimen_laterality:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Laterality Type
+      Origin: CRDC
+      Version: '2'
+      Code: 8028966
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  specimen_procurement_method:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Specimen Collection Method Type
+      Origin: CRDC
+      Version: '1'
+      Code: 15115495
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  timepoint:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Biospecimen Collection Timepoint Text
+      Origin: CRDC
+      Version: '2'
+      Code: 8031077
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tissue_morph_ICD-O-3:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Specimen Tumor Tissue ICD-O-3 Morphology Code
+      Origin: CRDC
+      Version: '1'
+      Code: 11326261
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tissue_sample_type:
+    Tags:
+      Template: 'No'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tumor_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Tumor Tissue Disease Description Type
+      Origin: CRDC
+      Version: '1'
+      Code: 3288124
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_90_or_over:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Age 90 or Over Indicator
+      Origin: CRDC
+      Version: '1'
+      Code: 15354920
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  birth_year:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Birth Year Date
+      Origin: CRDC
+      Version: '1'
+      Code: 16032218
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  ethnic_group:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Ethnic Group Category Text
+      Origin: CRDC
+      Version: '2'
+      Code: 2192217
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  race:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Race Category Text
+      Origin: CRDC
+      Version: '1'
+      Code: 2192199
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  sex:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Sex at Birth Category
+      Origin: CRDC
+      Version: '3'
+      Code: 7572817
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  age_in_days_at_diagnosis:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Diagnosis Count
+      Origin: CRDC
+      Version: '1'
+      Code: 15019300
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  age_in_days_last_known_disease_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Last Known Disease Status Count
+      Origin: CRDC
+      Version: '1'
+      Code: 14589579
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  ajcc_stage:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: American Joint Committee on Cancer Publication Version Type
+      Origin: CRDC
+      Version: '1'
+      Code: 2722309
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  last_known_disease_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Last Known Disease Status
+      Origin: CRDC
+      Version: '1'
+      Code: 12447172
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  metastasis_at_diagnosis:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Metastasis At Diagnosis Assessment Status
+      Origin: CRDC
+      Version: '1'
+      Code: 3438571
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  metastatic_stage_clinical_m:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Neoplasm American Joint Committee on Cancer Clinical Distant Metastasis
+        M Stage
+      Origin: CRDC
+      Version: '1'
+      Code: 3440331
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  method_of_diagnosis:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Disease Diagnostic Method Type
+      Origin: CRDC
+      Version: '1'
+      Code: 14857681
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  primary_diagnosis_ncit:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Disease Primary Diagnosis NCI Thesaurus Text
+      Origin: CRDC
+      Version: '1'
+      Code: 14905532
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  primary_site_uberon:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Disease Primary Site Uberon Identifier
+      Origin: CRDC
+      Version: '1'
+      Code: 14883047
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  regional_lymph_stage_clinical_n:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Neoplasm American Joint Committee on Cancer Clinical Regional Lymph Node
+        N Stage
+      Origin: CRDC
+      Version: '1'
+      Code: 3440330
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tissue_or_organ_of_origin_ICD-O:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: ICD-O Origin of Disease Anatomic Site
+      Origin: CRDC
+      Version: '1'
+      Code: 6161035
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tumor_classification:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Tumor Classification Category
+      Origin: CRDC
+      Version: '1'
+      Code: 12922545
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tumor_grade:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Tumor Grade
+      Origin: CRDC
+      Version: '2'
+      Code: 11325685
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  tumor_stage_clinical_t:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Neoplasm American Joint Committee on Cancer Clinical Primary Tumor T
+        Stage
+      Origin: CRDC
+      Version: '1'
+      Code: 3440328
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  alc_history_indicator:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Alcohol History Indicator
+      Origin: CRDC
+      Version: '1'
+      Code: 7537144
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  env_exposure:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Environmental Exposure Indicator
+      Origin: CRDC
+      Version: '1'
+      Code: 15753166
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  env_exposure_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Environmental Exposure Type
+      Origin: CRDC
+      Version: '1'
+      Code: 15753203
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pack_years_smoked:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Cigarette Smoking History Pack Year Value
+      Origin: CRDC
+      Version: '1'
+      Code: 2955385
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  smoking_hiostory:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Smoking History Status
+      Origin: CRDC
+      Version: '1'
+      Code: 3626148
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  years_smoked:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Smoking Duration Year Count
+      Origin: CRDC
+      Version: '1'
+      Code: 3137957
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  family_member_cancer_diagnosis:
+    Tags:
+      Template: 'Yes'
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  family_member_cancer_diagnosis_count:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Family Member with Cancer History Count
+      Origin: CRDC
+      Version: '1'
+      Code: 15907364
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_in_days_last_known_survival_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Last Known Survival Status Count
+      Origin: CRDC
+      Version: '1'
+      Code: 12305768
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  occurrence_type:
+    Tags:
+      Template: 'Yes'
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  dbgap_subject_id:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Research Activity dbGaP Subject Identifier Text
+      Origin: CRDC
+      Version: '1'
+      Code: 14940691
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  ncbi_tax_id:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Taxonomy NCBI Identifier
+      Origin: CRDC
+      Version: '2'
+      Code: 10543100
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  particpant_id:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Data Origin Identifier
+      Origin: CRDC
+      Version: '1'
+      Code: 12220014
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  pers_degree_suffix:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Academic Degree Suffix Abbreviation Text
+      Origin: CRDC
+      Version: '1'
+      Code: 2668478
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pers_email:
+    Tags:
+      Template: 'Yes'
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  pers_family_name:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Family/Last Name
+      Origin: CRDC
+      Version: '2'
+      Code: 2179591
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  pers_first_name:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Given/First Name
+      Origin: CRDC
+      Version: '2'
+      Code: 2179589
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  pers_institution:
+    Tags:
+      Template: 'Yes'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pers_middle_name:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Middle Name
+      Origin: CRDC
+      Version: '2'
+      Code: 2179590
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pers_orcid:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person ORCID Text
+      Origin: CRDC
+      Version: '3'
+      Code: 10624734
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pers_prefix_name:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Name Prefix Abbreviation Text
+      Origin: CRDC
+      Version: '1'
+      Code: 2663165
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pers_role:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Person Affiliation Role Text Type
+      Origin: CRDC
+      Version: '2'
+      Code: 2201713
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  pers_suffix_name:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Individual Genealogy Suffix Code
+      Origin: CRDC
+      Version: '2'
+      Code: 2006475
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  prg_external_url:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Program External URL Text
+      Origin: CRDC
+      Version: '1'
+      Code: 17087631
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  prg_full_description:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Program Full Description Text
+      Origin: CRDC
+      Version: '1'
+      Code: 17087562
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  prg_name:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Program Name
+      Origin: CRDC
+      Version: '1'
+      Code: 15846335
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  prg_short_description:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Program Short Description Text
+      Origin: CRDC
+      Version: '1'
+      Code: 17087559
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  prg_short_name:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Program Short Name
+      Origin: CRDC
+      Version: '1'
+      Code: 15846845
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  DOI_or_Pub_ID:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Digital Object Identifier Text
+      Origin: CRDC
+      Version: '1'
+      Code: 15915370
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  DOI_relationship_type:
+    Tags:
+      Template: 'Yes'
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  Publication_Status:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Publication Document Status
+      Origin: CRDC
+      Version: '1'
+      Code: 16698384
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  Publication_Title:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Title Text
+      Origin: CRDC
+      Version: '1'
+      Code: 16078531
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  Publication_Type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Document Type
+      Origin: CRDC
+      Version: '1'
+      Code: 16698383
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  authorship:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Citation Author List Text
+      Origin: CRDC
+      Version: '1'
+      Code: 16081468
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  citation:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Journal Citation Text
+      Origin: CRDC
+      Version: '1'
+      Code: 16081476
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  resource_identifier:
+    Tags:
+      Template: 'Yes'
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  url:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Digital Object Identifier URL Text
+      Origin: CRDC
+      Version: '1'
+      Code: 16987483
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  year_of_publication:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Publication Year Date
+      Origin: CRDC
+      Version: '1'
+      Code: 16081475
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  adult_or_pediatric_ya_study:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Legal Adult Or Pediatric Study Type
+      Origin: CRDC
+      Version: '3'
+      Code: 11524549
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  biospecimen_collection:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Research Activity Biospecimen Collection Indicator
+      Origin: CRDC
+      Version: '1'
+      Code: 16979768
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  data_access_level:
+    Tags:
+      Template: 'No'
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  dbgap_accession:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Research Activity dbGaP Accession Number Identifier
+      Origin: CRDC
+      Version: '1'
+      Code: 11524544
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  enrollment_beginning_year:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Research Activity Study Enrollment Start Year Date
+      Origin: CRDC
+      Version: '1'
+      Code: 16979766
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  enrollment_ending_year:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Research Activity Study Enrollment End Year Date
+      Origin: CRDC
+      Version: '1'
+      Code: 16979767
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  funding_agency:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Funding Agency Organization Name
+      Origin: CRDC
+      Version: '1'
+      Code: 16002760
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  grant_number:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Grant Funding Number Identifier
+      Origin: CRDC
+      Version: '1'
+      Code: 16002823
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  iacuc_approval_date:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Study Administration IACUC Approval Date
+      Origin: CRDC
+      Version: '1'
+      Code: 17545139
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  license_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Data File Dataset License Type
+      Origin: CRDC
+      Version: '1'
+      Code: 14902606
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  study_beginning_year:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Study Administration Study Start Year Date
+      Origin: CRDC
+      Version: '1'
+      Code: 15607845
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  study_description:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Research Activity Study Description Text
+      Origin: CRDC
+      Version: '1'
+      Code: 16188024
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  study_ending_year:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Study Administration Study End Year Date
+      Origin: CRDC
+      Version: '1'
+      Code: 15607913
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  study_external_url:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Program External URL Text
+      Origin: CRDC
+      Version: '1'
+      Code: 17087631
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  study_name:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Study Name Text
+      Origin: CRDC
+      Version: '4'
+      Code: 11459810
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  study_organism:
+    Tags:
+      Template: 'No'
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  study_short_name:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Administration Study Short Name Text
+      Origin: CRDC
+      Version: '4'
+      Code: 11459812
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  study_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Study Administration Study Status
+      Origin: CRDC
+      Version: '1'
+      Code: 15607838
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  study_type:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Study Primary Purpose Type
+      Origin: CRDC
+      Version: '1'
+      Code: 11160683
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  age_in_days_treatment_end:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Treatment End Count
+      Origin: CRDC
+      Version: '1'
+      Code: 12304723
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_in_days_treatment_start:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Treatment Start Count
+      Origin: CRDC
+      Version: '1'
+      Code: 12304720
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  initial_disease_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Treatment Initial Disease Status
+      Origin: CRDC
+      Version: '1'
+      Code: 15907348
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  number_of_cycles:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Therapeutic Procedure Cycle Administered Treatment Count
+      Origin: CRDC
+      Version: '1'
+      Code: 3060718
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  off_treatment_reason:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Off Treatment Reason
+      Origin: CRDC
+      Version: '1'
+      Code: 15743249
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  pharmacotherapy_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Pharmacotherapy Type
+      Origin: CRDC
+      Version: '1'
+      Code: 15743233
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  response:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Disease Response Assessment Outcome
+      Origin: CRDC
+      Version: '1'
+      Code: 13383448
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  therapeutic_agents:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Therapeutic Procedure Pharmacologic Substance or Chemical NCI Thesaurus
+        Name
+      Origin: CRDC
+      Version: '1'
+      Code: 14913015
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  treatment_anatomic_site_Uberon:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Therapeutic Procedure Anatomic Site Uberon Identifier
+      Origin: CRDC
+      Version: '1'
+      Code: 14461856
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  treatment_intent_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Treatment Intent Type
+      Origin: CRDC
+      Version: '2'
+      Code: 15157467
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  treatment_type:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Therapeutic Procedure Performed Type
+      Origin: CRDC
+      Version: '1'
+      Code: 14737565
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  ECOG_performance_assessment:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Performance Status ECOG Scale
+      Origin: CRDC
+      Version: '5.1'
+      Code: 88
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  Karnofsky_performance_status:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Karnofsky Performance Status Score
+      Origin: CRDC
+      Version: '4.2'
+      Code: 2003853
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  age_in_days_at_death:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Age in Days at Death Count
+      Origin: CRDC
+      Version: '1'
+      Code: 15748633
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  bmi:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Person Body Mass Index Value
+      Origin: CRDC
+      Version: '3'
+      Code: 2006410
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  bsa_unit_of_measure:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Subject Body Surface Area UCUM Code
+      Origin: CRDC
+      Version: '1'
+      Code: 15114329
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  cause_of_death:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Primary Cause of Death Reason
+      Origin: CRDC
+      Version: '1'
+      Code: 4783274
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  cause_of_death_source:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Patient Death Source Information Text Name
+      Origin: CRDC
+      Version: '1'
+      Code: 2390921
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  disease_response_criteria_system:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Disease Response System Criteria Type
+      Origin: CRDC
+      Version: '1'
+      Code: 13381490
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  height:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Person Height Value
+      Origin: CRDC
+      Version: '4'
+      Code: 2179643
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  height_unit_of_measure:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Person Height Unit of Measure Unified Code for Units of Measure Code
+      Origin: CRDC
+      Version: '1'
+      Code: 2538920
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  menopause_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Patient Menopause Status
+      Origin: CRDC
+      Version: '1.1'
+      Code: 2434914
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  prior_malignancy:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Subject Prior Malignancy Indicator
+      Origin: CRDC
+      Version: '1'
+      Code: 15998677
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  vital_status:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Participant Vital Status Type
+      Origin: CRDC
+      Version: '1'
+      Code: 2847330
+    Req: 'Yes'
+    Key: 'No'
+    Type: null
+  weight:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Person Weight Value
+      Origin: CRDC
+      Version: '4'
+      Code: 2179689
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  weight_unit_of_measure:
+    Tags:
+      Template: 'No'
+    Term:
+    - Value: Person Weight Unit of Measure Unified Code for Units of Measure Code
+      Origin: CRDC
+      Version: '1'
+      Code: 2630200
+    Req: 'No'
+    Key: 'No'
+    Type: null
+  year_of_death:
+    Tags:
+      Template: 'Yes'
+    Term:
+    - Value: Subject Death Year Date
+      Origin: CRDC
+      Version: '2'
+      Code: 15112166
+    Req: 'No'
+    Key: 'No'
+    Type: null

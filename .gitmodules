@@ -18,3 +18,7 @@
 	path = psdc-model
 	url = https://github.com/CBIIT/popsci-model.git
 	branch = Develop
+[submodule "sdm-model"]
+	path = sdm-model
+	url = https://github.com/CBIIT/crdc-submission-model
+	branch = main
